@@ -1,4 +1,7 @@
-# Book Guide MCP — notes for coding agents
+# Book Guide MCP — notes for coding agents (maintainers)
+
+> **Using** the MCP as an end-user agent? Read **[docs/USAGE.md](docs/USAGE.md)** and **[docs/AGENT_PLAYBOOK.md](docs/AGENT_PLAYBOOK.md)** first.  
+> This file is for agents/humans **editing and shipping** this repository.
 
 ## What this repo is
 
@@ -8,7 +11,7 @@ Open-source **MCP server**: turn books the user owns (or public-domain texts) in
 **Python package / module:** `book_skills_mcp`  
 **CLI:** `book-skills-mcp` · `python -m book_skills_mcp`
 
-## Agent operating rules
+## End-user agent operating rules (summary)
 
 1. Prefer `skill_match` → `skill_open` before deep search.
 2. Never invent quotes — `skill_search` / `skill_cite`.
@@ -16,6 +19,8 @@ Open-source **MCP server**: turn books the user owns (or public-domain texts) in
 4. `user_owned` imports require `ownership_attested=true`.
 5. Avicenna demo is **not medical advice**.
 6. Log to **stderr only** (stdio MCP — stdout is the wire).
+
+Full cookbook: [docs/USAGE.md](docs/USAGE.md) §3.
 
 ## Layout
 

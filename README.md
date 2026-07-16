@@ -85,6 +85,16 @@ tutor_start(book_id="avicenna-canon", mode="avicenna")
 
 ---
 
+## How to use (guides)
+
+| Guide | Who | Link |
+|-------|-----|------|
+| **Full usage guide** | Humans + agents | [docs/USAGE.md](docs/USAGE.md) |
+| **Agent playbook** (short) | AI agents / system prompts | [docs/AGENT_PLAYBOOK.md](docs/AGENT_PLAYBOOK.md) |
+| **Maintainer notes** | Contributors editing this repo | [AGENTS.md](AGENTS.md) |
+
+Start with **USAGE.md** if you are installing for the first time or wiring an agent.
+
 ## Quick start
 
 ```bash
