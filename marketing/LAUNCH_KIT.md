@@ -69,7 +69,7 @@ Official guide: https://www.producthunt.com/launch
 | **Glama** | Auto-indexes repos with `mcp` topics | Should appear after crawl |
 | **PulseMCP** | Often syncs from registry + GitHub | After registry/topics |
 | **Official MCP Registry** | Needs published package (PyPI) + `server.json` | Kit ready — publish PyPI first |
-| **mcp.so** | Manual form + GitHub URL | Submit at https://mcp.so |
+| **mcp.so** | Manual form + GitHub URL | Submit at https://mcp.so/submit |
 | **Smithery** | Manual / dashboard | https://smithery.ai |
 | **awesome-mcp-servers** | Community PR | Open PR (see below) |
 | **Hacker News** | Show HN post | Optional: “Show HN: Book Guide MCP…” |
