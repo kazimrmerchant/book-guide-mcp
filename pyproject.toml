@@ -1,15 +1,27 @@
 [project]
 name = "book-skills-mcp"
 version = "0.1.0"
-description = "Turn books you own (or public-domain links) into MCP skills: library, playbooks, frameworks, Socratic tutoring, and mentor sessions."
+description = "Book Guide MCP — use your books as guides for AI agents. Open-source MCP: playbooks, frameworks, citations, Socratic & Avicenna tutors."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Book Skills MCP contributors" }]
-keywords = ["mcp", "books", "skills", "agents", "socratic", "avicenna", "education"]
+authors = [{ name = "Book Guide MCP contributors" }]
+keywords = [
+  "mcp",
+  "model-context-protocol",
+  "books",
+  "skills",
+  "agents",
+  "book-guide",
+  "socratic",
+  "avicenna",
+  "education",
+  "cursor",
+]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
+  "Intended Audience :: Education",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Topic :: Education",
@@ -33,10 +45,10 @@ dev = ["pytest>=8", "pytest-asyncio>=0.24", "anyio>=4"]
 book-skills-mcp = "book_skills_mcp.server:main"
 
 [project.urls]
-Homepage = "https://github.com/book-skills-mcp/book-skills-mcp"
-Repository = "https://github.com/book-skills-mcp/book-skills-mcp"
-Issues = "https://github.com/book-skills-mcp/book-skills-mcp/issues"
-Changelog = "https://github.com/book-skills-mcp/book-skills-mcp/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/kazimrmerchant/book-guide-mcp"
+Repository = "https://github.com/kazimrmerchant/book-guide-mcp"
+Issues = "https://github.com/kazimrmerchant/book-guide-mcp/issues"
+Changelog = "https://github.com/kazimrmerchant/book-guide-mcp/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["hatchling"]

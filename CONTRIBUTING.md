@@ -1,6 +1,6 @@
-# Contributing to Book Skills MCP
+# Contributing to Book Guide MCP
 
-Thanks for helping. This project ships as a **local stdio MCP server** that turns books into agent skills.
+Thanks for helping. **Book Guide MCP** ships as a **local stdio MCP server** so people can use their books as guides for AI agents.
 
 ## Development setup
 

@@ -123,7 +123,7 @@ def fetch_url_to_uploads(url: str, uploads: Path | None = None) -> Path:
     with httpx.Client(
         follow_redirects=False,
         timeout=30.0,
-        headers={"User-Agent": "book-skills-mcp/0.1 (+https://github.com/book-skills-mcp)"},
+        headers={"User-Agent": "book-guide-mcp/0.1 (+https://github.com/kazimrmerchant/book-guide-mcp)"},
     ) as client:
         current = url
         for _ in range(5):

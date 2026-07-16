@@ -1,5 +1,7 @@
 # Security Policy
 
+**Book Guide MCP** is designed for local, user-controlled use. Default operation requires **no API keys or cloud credentials**.
+
 ## Supported versions
 
 | Version | Supported |
