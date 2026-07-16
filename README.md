@@ -7,6 +7,14 @@
 [![MCP](https://img.shields.io/badge/MCP-stdio-purple.svg)](https://modelcontextprotocol.io)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-green.svg)](https://www.python.org)
 
+<p align="center">
+  <img src="docs/assets/book-guide-infographic.svg" alt="Book Guide MCP infographic — L0 Library through L4 Mentor" width="720"/>
+</p>
+
+<p align="center">
+  <img src="docs/assets/book-guide-infographic-hero.png" alt="Book Guide MCP visual — books becoming agent skills" width="420"/>
+</p>
+
 > **Stop pasting chapters into chat.**  
 > Give your agent the books you already trust—as **skills**: when to use them, how to follow them, how to cite them, and how to teach with them.
 
@@ -91,6 +99,7 @@ tutor_start(book_id="avicenna-canon", mode="avicenna")
 |-------|-----|------|
 | **Full usage guide** | Humans + agents | [docs/USAGE.md](docs/USAGE.md) |
 | **Agent playbook** (short) | AI agents / system prompts | [docs/AGENT_PLAYBOOK.md](docs/AGENT_PLAYBOOK.md) |
+| **Infographic** | Quick visual overview | [docs/assets/](docs/assets/) |
 | **Maintainer notes** | Contributors editing this repo | [AGENTS.md](AGENTS.md) |
 
 Start with **USAGE.md** if you are installing for the first time or wiring an agent.

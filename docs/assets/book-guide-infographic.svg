@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Book Guide MCP  Use your books as guides for AI agents</title>
+  <desc id="desc">Infographic of L0L4 skill levels: Library, Guide, Playbook, Method, Mentor, with local-first open-source badges.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="45%" stop-color="#152047"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e2a4a"/>
+      <stop offset="100%" stop-color="#243056"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6d98a"/>
+      <stop offset="100%" stop-color="#d4a84b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ee7ff"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .title { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 800; fill: #ffffff; letter-spacing: 1.5px; }
+      .sub { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 500; fill: #c7d2fe; }
+      .level { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 800; fill: #f6d98a; }
+      .name { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 700; fill: #ffffff; }
+      .desc { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 500; fill: #cbd5e1; }
+      .tag { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 700; fill: #0b1224; }
+      .foot { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 600; fill: #e2e8f0; }
+      .muted { font-family: ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif; font-weight: 500; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="1400" fill="url(#bg)"/>
+  <circle cx="120" cy="180" r="180" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="780" cy="320" r="220" fill="#a78bfa" opacity="0.10"/>
+  <circle cx="700" cy="1100" r="200" fill="#38bdf8" opacity="0.07"/>
+
+  <!-- Header -->
+  <text class="title" x="450" y="78" text-anchor="middle" font-size="48">BOOK GUIDE MCP</text>
+  <text class="sub" x="450" y="118" text-anchor="middle" font-size="22">Use your books as guides for AI agents</text>
+  <rect x="300" y="138" width="300" height="4" rx="2" fill="url(#gold)"/>
+
+  <!-- Hero metaphor -->
+  <g transform="translate(450, 320)">
+    <!-- Book -->
+    <g filter="url(#glow)">
+      <path d="M-170,-40 C-170,-70 -130,-90 -90,-90 L-20,-90 L-20,70 L-90,70 C-130,70 -170,50 -170,20 Z" fill="#1e3a5f" stroke="#6ee7ff" stroke-width="3"/>
+      <path d="M170,-40 C170,-70 130,-90 90,-90 L20,-90 L20,70 L90,70 C130,70 170,50 170,20 Z" fill="#243b6b" stroke="#6ee7ff" stroke-width="3"/>
+      <path d="M-20,-90 L0,-100 L20,-90 L20,70 L0,80 L-20,70 Z" fill="#0f172a" stroke="#f6d98a" stroke-width="2"/>
+      <!-- page lines -->
+      <line x1="-140" y1="-50" x2="-40" y2="-50" stroke="#94a3b8" stroke-width="2" opacity="0.5"/>
+      <line x1="-140" y1="-25" x2="-45" y2="-25" stroke="#94a3b8" stroke-width="2" opacity="0.45"/>
+      <line x1="-140" y1="0" x2="-50" y2="0" stroke="#94a3b8" stroke-width="2" opacity="0.4"/>
+      <line x1="40" y1="-50" x2="140" y2="-50" stroke="#94a3b8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="-25" x2="140" y2="-25" stroke="#94a3b8" stroke-width="2" opacity="0.45"/>
+      <line x1="50" y1="0" x2="140" y2="0" stroke="#94a3b8" stroke-width="2" opacity="0.4"/>
+    </g>
+    <!-- Skill cards rising -->
+    <g transform="translate(-60,-150)">
+      <rect x="-50" y="-28" width="100" height="56" rx="10" fill="#1e293b" stroke="#f6d98a" stroke-width="2"/>
+      <text x="0" y="6" text-anchor="middle" class="name" font-size="14">SKILL</text>
+    </g>
+    <g transform="translate(70,-165)">
+      <rect x="-50" y="-28" width="100" height="56" rx="10" fill="#1e293b" stroke="#6ee7ff" stroke-width="2"/>
+      <text x="0" y="6" text-anchor="middle" class="name" font-size="14">CITE</text>
+    </g>
+    <!-- Agent node -->
+    <g transform="translate(0, 130)">
+      <circle r="36" fill="url(#cyan)" opacity="0.9"/>
+      <circle r="22" fill="#0b1224"/>
+      <circle cx="-7" cy="-4" r="4" fill="#6ee7ff"/>
+      <circle cx="7" cy="-4" r="4" fill="#6ee7ff"/>
+      <path d="M-10,8 Q0,16 10,8" fill="none" stroke="#6ee7ff" stroke-width="2"/>
+      <text y="62" text-anchor="middle" class="muted" font-size="14">AI agent</text>
+    </g>
+    <!-- rays -->
+    <path d="M0,90 L-40,40" stroke="#f6d98a" stroke-width="2" opacity="0.6"/>
+    <path d="M0,90 L40,35" stroke="#6ee7ff" stroke-width="2" opacity="0.6"/>
+    <path d="M0,90 L0,20" stroke="#c4b5fd" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <text class="muted" x="450" y="500" text-anchor="middle" font-size="16">From shelf ’ skill package ’ agent action</text>
+
+  <!-- Levels -->
+  <!-- L0 -->
+  <g transform="translate(70, 540)">
+    <rect width="760" height="100" rx="18" fill="url(#card)" stroke="#334155" stroke-width="2"/>
+    <rect width="10" height="100" rx="4" fill="#38bdf8"/>
+    <circle cx="70" cy="50" r="28" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+    <text x="70" y="57" text-anchor="middle" class="level" font-size="18" fill="#38bdf8">L0</text>
+    <text x="120" y="42" class="name" font-size="26">Library</text>
+    <text x="120" y="72" class="desc" font-size="18">Search + cite passages  evidence, not vibes</text>
+  </g>
+  <!-- L1 -->
+  <g transform="translate(70, 660)">
+    <rect width="760" height="100" rx="18" fill="url(#card)" stroke="#334155" stroke-width="2"/>
+    <rect width="10" height="100" rx="4" fill="#60a5fa"/>
+    <circle cx="70" cy="50" r="28" fill="#0f172a" stroke="#60a5fa" stroke-width="3"/>
+    <text x="70" y="57" text-anchor="middle" class="level" font-size="18" fill="#60a5fa">L1</text>
+    <text x="120" y="42" class="name" font-size="26">Guide</text>
+    <text x="120" y="72" class="desc" font-size="18">Skill card  when to use / when not to</text>
+  </g>
+  <!-- L2 -->
+  <g transform="translate(70, 780)">
+    <rect width="760" height="100" rx="18" fill="url(#card)" stroke="#334155" stroke-width="2"/>
+    <rect width="10" height="100" rx="4" fill="#a78bfa"/>
+    <circle cx="70" cy="50" r="28" fill="#0f172a" stroke="#a78bfa" stroke-width="3"/>
+    <text x="70" y="57" text-anchor="middle" class="level" font-size="18" fill="#a78bfa">L2</text>
+    <text x="120" y="42" class="name" font-size="26">Playbook</text>
+    <text x="120" y="72" class="desc" font-size="18">Multi-step procedures from the book</text>
+  </g>
+  <!-- L3 -->
+  <g transform="translate(70, 900)">
+    <rect width="760" height="100" rx="18" fill="url(#card)" stroke="#334155" stroke-width="2"/>
+    <rect width="10" height="100" rx="4" fill="#f472b6"/>
+    <circle cx="70" cy="50" r="28" fill="#0f172a" stroke="#f472b6" stroke-width="3"/>
+    <text x="70" y="57" text-anchor="middle" class="level" font-size="18" fill="#f472b6">L3</text>
+    <text x="120" y="42" class="name" font-size="26">Method</text>
+    <text x="120" y="72" class="desc" font-size="18">Named frameworks as structured worksheets</text>
+  </g>
+  <!-- L4 -->
+  <g transform="translate(70, 1020)">
+    <rect width="760" height="100" rx="18" fill="url(#card)" stroke="#334155" stroke-width="2"/>
+    <rect width="10" height="100" rx="4" fill="url(#gold)"/>
+    <circle cx="70" cy="50" r="28" fill="#0f172a" stroke="#f6d98a" stroke-width="3"/>
+    <text x="70" y="57" text-anchor="middle" class="level" font-size="18">L4</text>
+    <text x="120" y="42" class="name" font-size="26">Mentor</text>
+    <text x="120" y="72" class="desc" font-size="18">Socratic &amp; Avicenna tutors · curriculum · rubrics</text>
+  </g>
+
+  <!-- Tagline -->
+  <text class="foot" x="450" y="1185" text-anchor="middle" font-size="20">Methods first  ·  Full text second  ·  Citations always</text>
+
+  <!-- Badges -->
+  <g transform="translate(120, 1220)">
+    <rect width="180" height="44" rx="22" fill="url(#gold)"/>
+    <text x="90" y="28" text-anchor="middle" class="tag" font-size="15">Local-first</text>
+  </g>
+  <g transform="translate(360, 1220)">
+    <rect width="180" height="44" rx="22" fill="url(#gold)"/>
+    <text x="90" y="28" text-anchor="middle" class="tag" font-size="15">Open Source MCP</text>
+  </g>
+  <g transform="translate(600, 1220)">
+    <rect width="200" height="44" rx="22" fill="url(#gold)"/>
+    <text x="100" y="28" text-anchor="middle" class="tag" font-size="15">No API keys required</text>
+  </g>
+
+  <text class="muted" x="450" y="1320" text-anchor="middle" font-size="14">github.com/kazimrmerchant/book-guide-mcp  ·  MIT</text>
+  <text class="muted" x="450" y="1355" text-anchor="middle" font-size="13">Your shelf. Your rules. Your agents guide.</text>
+</svg>

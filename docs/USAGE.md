@@ -4,6 +4,12 @@
 
 **Product line:** *Use your books as guides for AI agents.*
 
+### Visual overview
+
+![Book Guide MCP L0–L4 infographic](assets/book-guide-infographic.svg)
+
+<p align="center"><img src="assets/book-guide-infographic-hero.png" alt="Hero visual" width="360"/></p>
+
 ---
 
 ## 1. What this MCP does (30 seconds)
