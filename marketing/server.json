@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.kazimrmerchant/book-guide-mcp",
+  "title": "Book Guide MCP",
+  "description": "Use your books as guides for AI agents: playbooks, citations, Socratic & Avicenna tutors.",
+  "repository": {
+    "url": "https://github.com/kazimrmerchant/book-guide-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "book-skills-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "book_skills_mcp"
+        }
+      ],
+      "runtimeHint": "python",
+      "environmentVariables": [
+        {
+          "name": "PYTHONUTF8",
+          "description": "Set to 1 on Windows for UTF-8 stdio",
+          "isRequired": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

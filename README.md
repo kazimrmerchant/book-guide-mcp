@@ -334,6 +334,13 @@ Bundled educational skills (`socratic-method`, `avicenna-canon`) are public-doma
 
 ---
 
+## Discoverability
+
+- **Launch kit** (Product Hunt copy, directory checklist): [marketing/LAUNCH_KIT.md](marketing/LAUNCH_KIT.md)
+- **MCP Registry manifest** (after PyPI publish): [marketing/server.json](marketing/server.json)
+
+<!-- mcp-name: io.github.kazimrmerchant/book-guide-mcp -->
+
 <p align="center">
   <b>Your shelf. Your rules. Your agent’s guide.</b><br/>
   <sub>Book Guide MCP — use your books as guides for AI agents.</sub>
