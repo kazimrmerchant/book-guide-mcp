@@ -1,0 +1,75 @@
+name: Bug report
+description: Something broken in Book Guide MCP (tools, import, tutor, security)
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve **Book Guide MCP**.  
+        Please include enough detail to reproduce. Do **not** paste secrets, tokens, or full copyrighted book text.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Clear description of the bug.
+      placeholder: e.g. skill_import_file fails on a valid EPUB under data/uploads/
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps, host (Cursor / Claude / Antigravity / …), and tools called if relevant.
+      placeholder: |
+        1. Install with pip install -e .
+        2. Call library_list
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: e.g. v0.2.0 or git SHA
+      placeholder: v0.2.0
+    validations:
+      required: false
+  - type: dropdown
+    id: host
+    attributes:
+      label: MCP host
+      options:
+        - Cursor
+        - Claude Desktop
+        - Claude Code
+        - VS Code / Copilot
+        - Google Antigravity
+        - Zed
+        - Cline
+        - Continue
+        - JetBrains
+        - Other / CLI only
+    validations:
+      required: true
+  - type: input
+    id: os_python
+    attributes:
+      label: OS and Python
+      placeholder: Windows 11 / Python 3.13
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / error text
+      description: Paste stderr (not secrets). Use a fenced code block.
+      render: text
+    validations:
+      required: false

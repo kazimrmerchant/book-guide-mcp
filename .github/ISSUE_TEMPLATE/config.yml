@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Usage & install questions
+    url: https://github.com/kazimrmerchant/book-guide-mcp/blob/main/docs/USAGE.md
+    about: How to install, connect MCP hosts, and use tools — start with USAGE.md
+  - name: Examples (what to expect)
+    url: https://github.com/kazimrmerchant/book-guide-mcp/blob/main/docs/examples/README.md
+    about: Walkthroughs of Socratic tutor, Avicenna lens, and import flows

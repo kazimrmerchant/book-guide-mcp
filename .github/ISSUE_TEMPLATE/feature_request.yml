@@ -1,0 +1,47 @@
+name: Feature request
+description: Propose a capability that helps ship improvements with book skills
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the **outcome** you want to ship, not only an API shape.  
+        Book Guide MCP prioritizes methods, citations, and local-first safety.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / opportunity
+      description: What is hard or missing when using books as agent skills today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: How should it work for agents and humans?
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Closest skill level
+      options:
+        - L0 Library (search / cite)
+        - L1 Guide (skill card)
+        - L2 Playbook
+        - L3 Framework
+        - L4 Mentor / tutor
+        - Import / packaging
+        - Host integration / docs
+        - Security / licensing
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional — workarounds or other tools you tried.
+    validations:
+      required: false
