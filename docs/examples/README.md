@@ -7,6 +7,7 @@ These walkthroughs show **real tool sequences** and **sample agent output** when
 | [01 — Socratic tutor](01-socratic-tutor.md) | “Quiz me on definitions” | `tutor_start` → `tutor_turn` | [flow](../assets/example-socratic-flow.svg) |
 | [02 — Avicenna lens](02-avicenna-framework.md) | “Review this design methodically” | `skill_framework_apply` + cite | [flow](../assets/example-avicenna-flow.svg) |
 | [03 — Import your book](03-import-your-book.md) | “Turn my handbook into a skill” | `skill_import_file` → playbook | [flow](../assets/example-import-flow.svg) |
+| [04 — Challenge findings](04-challenge-avicenna-socratic.md) | “Pressure-test the product with its own books” | frameworks + tutor | — |
 
 ### Master overview
 

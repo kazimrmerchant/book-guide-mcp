@@ -100,6 +100,19 @@ def advance_playbook(
     }
 
 
+# context= seeds these field names when the caller did not pass field_values
+_CONTEXT_SEED_FIELDS = frozenset(
+    {
+        "context",
+        "subject",
+        "claim",
+        "learner_definition",
+        "work_summary",
+        "situation",
+    }
+)
+
+
 def apply_framework(
     pkg: SkillPackage,
     framework_id: str,
@@ -108,12 +121,13 @@ def apply_framework(
 ) -> dict[str, Any]:
     fw = get_framework(pkg, framework_id)
     field_values = field_values or {}
+    ctx = context.strip()
     filled = []
     missing = []
     for field in fw.fields:
         val = field_values.get(field.name, "").strip()
-        if not val and field.name == "context":
-            val = context.strip()
+        if not val and field.name in _CONTEXT_SEED_FIELDS and ctx:
+            val = ctx
         if not val and field.required:
             missing.append(field.name)
         filled.append(
@@ -125,6 +139,24 @@ def apply_framework(
                 "example": field.example,
             }
         )
+    seed_note = (
+        f"Seeded from context into: "
+        + ", ".join(
+            f["name"]
+            for f in filled
+            if f["value"] == ctx and f["name"] in _CONTEXT_SEED_FIELDS
+        )
+        if ctx
+        else ""
+    )
+    instructions = [
+        "Fill missing_required fields using skill_search for evidence.",
+        "Do not invent quotations; use skill_cite for any quote.",
+        "Complete genus+differentia for any definition field (Avicenna: slogans are not knowledge).",
+        f"Return a structured result matching: {fw.output_shape or 'framework fields'}",
+    ]
+    if seed_note:
+        instructions.insert(0, seed_note + ". Refine that seed; do not leave it as a vague slogan.")
     return {
         "framework_id": fw.id,
         "framework_name": fw.name,
@@ -133,10 +165,6 @@ def apply_framework(
         "output_shape": fw.output_shape,
         "fields": filled,
         "missing_required": missing,
-        "agent_instructions": [
-            "Fill missing_required fields using skill_search for evidence.",
-            "Do not invent quotations; use skill_cite for any quote.",
-            f"Return a structured result matching: {fw.output_shape or 'framework fields'}",
-        ],
+        "agent_instructions": instructions,
         "context": context,
     }

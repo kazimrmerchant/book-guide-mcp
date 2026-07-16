@@ -216,58 +216,80 @@ def tutor_turn(
     session.turns.append({"role": "learner", "text": learner_message.strip()[:4000]})
     library.save_tutor_session(session)
 
-    text = learner_message.lower()
-    length = len(learner_message.strip())
+    claim = learner_message.strip()
+    text = claim.lower()
+    length = len(claim)
     vague = length < 40 or text in {"idk", "i don't know", "dunno", "maybe", "yes", "no"}
+    # Surface the claim so elenchus targets the sentence, not only the curriculum label
+    claim_bit = claim if length <= 180 else claim[:177] + "…"
+    concept_label = concept.name if concept else "this idea"
 
     if session.mode == TutorMode.AVICENNA:
         if vague:
             move = "demand_definition"
             prompt = (
-                f"That is still too thin for Avicenna-mode. Define **{concept.name if concept else 'the term'}** "
-                f"with genus (what kind of thing) and differentia (what sets it apart). One sentence."
+                f"That is still too thin for Avicenna-mode. You said: “{claim_bit}”. "
+                f"Define the load-bearing term (or **{concept_label}**) with genus "
+                f"(what kind of thing) and differentia (what sets it apart). One sentence that could be false."
             )
         elif any(w in text for w in ("because", "cause", "reason", "therefore", "since")):
             move = "press_application"
             prompt = (
-                "Good — you offered a reason. Now apply the universal to a particular: "
-                "one concrete case, and state which part of your definition covers it."
+                f"Good — you offered a reason about “{claim_bit}”. Now apply the universal to a particular: "
+                "one concrete case, and state which clause of your definition covers it."
+            )
+        elif any(w in text for w in ("is a", "is an", "means", "defined as", "kind of")):
+            move = "test_definition_then_divide"
+            prompt = (
+                f"Working definition noted: “{claim_bit}”. "
+                f"Would this still hold if we changed the differentia? "
+                f"Then divide **{concept_label}** (or your subject) into 2–4 parts/kinds relevant to your goal."
             )
         else:
             move = "ask_division_or_proof"
             prompt = (
-                f"Acceptable start. Next: either (a) divide **{concept.name if concept else 'it'}** "
+                f"Acceptable start on “{claim_bit}”. Next: either (a) divide **{concept_label}** "
                 f"into parts/kinds, or (b) give a short demonstration (why it must be so). Choose one."
             )
         instructions = [
             "Stay in definition → division → demonstration → application order.",
+            "Target the learner's sentence; do not ignore their claim to lecture the chapter title.",
             "If the learner confuses modern science with classical claims, flag the difference.",
             "Cite excerpts when stating what the book teaches.",
+            "Slogans without genus+differentia are not knowledge (press for a falsifiable differentia).",
         ]
     elif session.mode == TutorMode.SOCRATIC:
         if vague:
             move = "clarify"
-            prompt = "What do you mean, exactly? Give a definition or a concrete example."
+            prompt = (
+                f"What do you mean by “{claim_bit}”, exactly? "
+                "Give a definition or a concrete example — one defendable sentence."
+            )
         elif "?" in learner_message:
             move = "reflect_question"
             prompt = (
                 "Interesting question. Before I answer: what would have to be true for your "
-                "question to make sense? State your assumption."
+                "question to make sense? State your assumption as a claim."
             )
         else:
             move = "elenchus"
             prompt = (
-                f"Suppose the opposite of what you just said. What breaks? "
-                f"Then repair your claim about **{concept.name if concept else 'this idea'}**."
+                f"You claimed: “{claim_bit}”. Suppose the opposite. What breaks? "
+                f"Then repair the claim so it still speaks to **{concept_label}** without humiliation of persons — "
+                "only of weak sentences."
             )
         instructions = [
             "Prefer questions over answers until the learner has a clear claim.",
+            "Quote or paraphrase their claim in the next move (claim focus).",
             "Expose contradiction gently; do not humiliate.",
             "When settled, give a short synthesis with a citation.",
+            "If they want a direct answer or are in distress, switch mode (dialogue ethics).",
         ]
     else:
         move = "continue"
-        prompt = "Continue from the learner's message; keep teaching moves short and check understanding."
+        prompt = (
+            f"Continue from “{claim_bit}”; keep teaching moves short and check understanding of **{concept_label}**."
+        )
         instructions = ["Stay on concept", "Cite when claiming book content"]
 
     hits = []

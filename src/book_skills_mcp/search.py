@@ -73,11 +73,31 @@ def search_library(
     return hits[: max(1, min(limit, 25))]
 
 
+# Intent keywords → boost matching demo / method skills
+_INTENT_BOOSTS: dict[str, tuple[str, ...]] = {
+    "socratic": ("socratic", "elenchus", "dialectic", "question", "quiz", "dialogue"),
+    "avicenna": ("avicenna", "ibn", "sina", "hadd", "burhan", "definition", "canon"),
+    "tutor": ("tutor", "teach", "mentor", "coach", "curriculum", "mastery"),
+    "playbook": ("playbook", "procedure", "steps", "checklist"),
+    "framework": ("framework", "method", "lens", "rubric", "review"),
+    "cite": ("cite", "citation", "quote", "evidence", "passage"),
+}
+
+
 def match_skills(packages: list[SkillPackage], task: str, limit: int = 5) -> list[MatchResult]:
     q_tokens = tokenize(task)
+    task_l = task.lower()
     results: list[MatchResult] = []
     for pkg in packages:
         c = pkg.card
+        excerpt_sample = " ".join(
+            (e.title + " " + e.text[:160]) for e in pkg.excerpts[:12]
+        )
+        concept_sample = ""
+        if pkg.curriculum:
+            concept_sample = " ".join(
+                x.name + " " + x.summary for x in pkg.curriculum.concepts[:12]
+            )
         blob = " ".join(
             [
                 c.name,
@@ -89,16 +109,25 @@ def match_skills(packages: list[SkillPackage], task: str, limit: int = 5) -> lis
                 " ".join(c.tags),
                 " ".join(p.name + " " + p.description for p in pkg.playbooks),
                 " ".join(f.name + " " + f.description for f in pkg.frameworks),
+                " ".join(r.name + " " + r.description for r in pkg.rubrics),
+                excerpt_sample,
+                concept_sample,
             ]
         )
         score = _score(q_tokens, tokenize(blob), blob)
-        # boost exact domain/tag hits
+        # boost exact domain/tag/id hits
+        id_bits = {c.id.lower(), c.name.lower(), *{d.lower() for d in c.domains}, *{x.lower() for x in c.tags}}
         for t in q_tokens:
-            if t in {d.lower() for d in c.domains} or t in {x.lower() for x in c.tags}:
-                score += 0.15
-        if score <= 0:
-            continue
-        reason_bits = []
+            if t in id_bits or t in c.id.lower().replace("-", " ").split():
+                score += 0.2
+        # intent boosts (Socratic/Avicenna tutors, etc.)
+        reason_bits: list[str] = []
+        for label, keys in _INTENT_BOOSTS.items():
+            if any(k in task_l for k in keys):
+                skill_blob = (c.id + " " + c.title + " " + " ".join(c.tags) + " " + c.when_to_use).lower()
+                if any(k in skill_blob for k in keys) or label in skill_blob:
+                    score += 0.35
+                    reason_bits.append(f"intent:{label}")
         if any(t in c.when_to_use.lower() for t in q_tokens):
             reason_bits.append("matches when_to_use")
         if pkg.playbooks and any(t in " ".join(p.name for p in pkg.playbooks).lower() for t in q_tokens):
@@ -107,6 +136,10 @@ def match_skills(packages: list[SkillPackage], task: str, limit: int = 5) -> lis
             t in " ".join(f.name for f in pkg.frameworks).lower() for t in q_tokens
         ):
             reason_bits.append("has relevant framework")
+        if pkg.curriculum and any(t in concept_sample.lower() for t in q_tokens):
+            reason_bits.append("matches curriculum concepts")
+        if score <= 0:
+            continue
         if not reason_bits:
             reason_bits.append("lexical match on skill card / content")
         results.append(
@@ -114,7 +147,7 @@ def match_skills(packages: list[SkillPackage], task: str, limit: int = 5) -> lis
                 book_id=c.id,
                 name=c.name,
                 level=c.level,
-                score=round(min(score, 1.5), 4),
+                score=round(min(score, 2.0), 4),
                 reason="; ".join(reason_bits),
                 when_to_use=c.when_to_use,
             )

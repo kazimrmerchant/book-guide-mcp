@@ -32,6 +32,16 @@ def test_search_and_match():
     matches = match_skills(lib.list_packages(), "teach with socratic questions")
     assert matches
     assert any(m.book_id == "socratic-method" for m in matches)
+    # Intent boost: Socratic/Avicenna should rank above unrelated sample skills
+    ranked = match_skills(
+        lib.list_packages(),
+        "use socratic elenchus and avicenna definition method to tutor",
+        limit=10,
+    )
+    ids = [m.book_id for m in ranked]
+    assert "socratic-method" in ids
+    assert "avicenna-canon" in ids
+    assert ids.index("socratic-method") < 3 or ids.index("avicenna-canon") < 3
 
 
 def test_socratic_tutor_session(tmp_path: Path):

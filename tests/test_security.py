@@ -94,6 +94,39 @@ def test_label_untrusted_strips_zwc():
     assert "BEGIN EXTERNAL CONTENT" in labeled
 
 
+def test_framework_context_seeds_subject():
+    from book_skills_mcp.playbooks import apply_framework
+    from book_skills_mcp.store import Library
+
+    lib = Library(skills_dir=ROOT / "skills", library_dir=ROOT / "library")
+    pkg = lib.get("avicenna-canon")
+    assert pkg
+    fw = apply_framework(
+        pkg,
+        "hadd-burhan",
+        "Book Guide MCP turns books into agent skills",
+    )
+    subject = next(f for f in fw["fields"] if f["name"] == "subject")
+    assert subject["value"] and "Book Guide" in subject["value"]
+    assert "definition" in fw["missing_required"]
+
+
+def test_tutor_echoes_learner_claim():
+    from book_skills_mcp.models import TutorMode
+    from book_skills_mcp.store import Library
+    from book_skills_mcp.tutor import start_tutor, tutor_turn
+
+    lib = Library(
+        skills_dir=ROOT / "skills",
+        library_dir=ROOT / "library",
+        sessions_dir=ROOT / "sessions",
+    )
+    started = start_tutor(lib, "socratic-method", mode=TutorMode.SOCRATIC)
+    claim = "Book Guide MCP is just RAG with extra steps"
+    turn = tutor_turn(lib, started["session_id"], claim)
+    assert "RAG" in turn["suggested_reply_to_learner"] or "rag" in turn["suggested_reply_to_learner"].lower()
+
+
 def test_examples_importable_via_default_sandbox():
     """examples/ is in default sandbox so sample_book.md works in docs."""
     sample = ROOT / "examples" / "sample_book.md"
