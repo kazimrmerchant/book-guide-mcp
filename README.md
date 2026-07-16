@@ -151,16 +151,37 @@ tutor_start(book_id="avicenna-canon", mode="avicenna")
 
 ---
 
+## Examples — what to expect
+
+Concrete walkthroughs with **tool calls**, **sample JSON**, and **agent lines** you should see:
+
+| Example | Infographic |
+|---------|-------------|
+| [Socratic tutor](docs/examples/01-socratic-tutor.md) | ![Socratic flow](docs/assets/example-socratic-flow.svg) |
+| [Avicenna method lens](docs/examples/02-avicenna-framework.md) | ![Avicenna flow](docs/assets/example-avicenna-flow.svg) |
+| [Import your book](docs/examples/03-import-your-book.md) | ![Import flow](docs/assets/example-import-flow.svg) |
+
+### Master “what to expect” flow
+
+![What to expect with Book Guide MCP](docs/assets/what-to-expect-flow.svg)
+
+<p align="center">
+  <img src="docs/assets/what-to-expect-hero.png" alt="What to expect — books become agent guides" width="400"/>
+</p>
+
+Index: [docs/examples/README.md](docs/examples/README.md)
+
 ## How to use (guides)
 
 | Guide | Who | Link |
 |-------|-----|------|
+| **Examples (what to expect)** | Everyone | [docs/examples/](docs/examples/) |
 | **Full usage guide** | Humans + agents | [docs/USAGE.md](docs/USAGE.md) |
 | **Agent playbook** (short) | AI agents / system prompts | [docs/AGENT_PLAYBOOK.md](docs/AGENT_PLAYBOOK.md) |
-| **Infographic** | Quick visual overview | [docs/assets/](docs/assets/) |
+| **Infographics** | Visual overview | [docs/assets/](docs/assets/) |
 | **Maintainer notes** | Contributors editing this repo | [AGENTS.md](AGENTS.md) |
 
-Start with **USAGE.md** if you are installing for the first time or wiring an agent.
+Start with **examples** for “what will I see?”, or **USAGE.md** for install.
 
 ## Quick start
 

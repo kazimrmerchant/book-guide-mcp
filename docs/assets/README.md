@@ -1,11 +1,14 @@
-# Infographic assets
+# Visual assets
 
 | File | Use |
 |------|-----|
-| `book-guide-infographic.svg` | **Primary** — sharp text, L0–L4 levels, badges (best for README + docs) |
-| `book-guide-infographic-hero.png` | Marketing hero (Grok Imagine / SuperHeavy) |
-| `book-guide-infographic-alt.png` | Alternate composition |
+| `what-to-expect-flow.svg` | Master: request → tools → guidance |
+| `what-to-expect-hero.png` | Hero still for “what to expect” |
+| `example-socratic-flow.svg` | Example 01 |
+| `example-avicenna-flow.svg` | Example 02 |
+| `example-import-flow.svg` | Example 03 |
+| `book-guide-infographic.svg` | L0–L4 product card |
+| `book-guide-infographic-hero.png` | Product hero |
+| `book-guide-infographic-alt.png` | Alternate hero |
 
-**Tagline on all:** *Use your books as guides for AI agents* · *Methods first · Full text second · Citations always*
-
-Generated with SuperGrok Imagine (real Chrome); SVG hand-authored for accessibility and crisp rendering on GitHub.
+SVG files are the source of truth for readable labels on GitHub.

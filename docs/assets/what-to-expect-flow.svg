@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="t d">
+  <title id="t">What to expect with Book Guide MCP</title>
+  <desc id="d">Flow from your request through tools to expected agent behavior.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f6d98a"/>
+      <stop offset="100%" stop-color="#d4a84b"/>
+    </linearGradient>
+    <style>
+      .h { font-family: system-ui,Segoe UI,sans-serif; font-weight:800; fill:#fff; }
+      .s { font-family: system-ui,Segoe UI,sans-serif; font-weight:600; fill:#c7d2fe; }
+      .b { font-family: system-ui,Segoe UI,sans-serif; font-weight:700; fill:#0b1224; }
+      .w { font-family: system-ui,Segoe UI,sans-serif; font-weight:600; fill:#e2e8f0; }
+      .m { font-family: system-ui,Segoe UI,sans-serif; font-weight:500; fill:#94a3b8; }
+      .g { font-family: ui-monospace,Consolas,monospace; font-weight:600; fill:#6ee7ff; }
+    </style>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)"/>
+  <text class="h" x="480" y="48" text-anchor="middle" font-size="28">What to expect when you use Book Guide MCP</text>
+  <text class="s" x="480" y="78" text-anchor="middle" font-size="16">Your request ’ MCP tools ’ guided agent behavior (not random advice)</text>
+
+  <!-- Step boxes -->
+  <g transform="translate(40,120)">
+    <rect width="200" height="140" rx="16" fill="#1e2a4a" stroke="#38bdf8" stroke-width="2"/>
+    <text class="g" x="100" y="36" text-anchor="middle" font-size="14">1. YOU ASK</text>
+    <text class="w" x="100" y="70" text-anchor="middle" font-size="14">Quiz me · Review this</text>
+    <text class="w" x="100" y="92" text-anchor="middle" font-size="14">Import my book</text>
+    <text class="m" x="100" y="120" text-anchor="middle" font-size="12">Natural language</text>
+  </g>
+  <path d="M250,190 L290,190" stroke="#f6d98a" stroke-width="3" marker-end="url(#arr)"/>
+  <g transform="translate(300,120)">
+    <rect width="200" height="140" rx="16" fill="#1e2a4a" stroke="#a78bfa" stroke-width="2"/>
+    <text class="g" x="100" y="36" text-anchor="middle" font-size="14">2. AGENT CALLS</text>
+    <text class="w" x="100" y="70" text-anchor="middle" font-size="13">skill_match / open</text>
+    <text class="w" x="100" y="92" text-anchor="middle" font-size="13">tutor_* · playbook_*</text>
+    <text class="m" x="100" y="120" text-anchor="middle" font-size="12">MCP tools</text>
+  </g>
+  <path d="M510,190 L550,190" stroke="#f6d98a" stroke-width="3"/>
+  <g transform="translate(560,120)">
+    <rect width="200" height="140" rx="16" fill="#1e2a4a" stroke="#f472b6" stroke-width="2"/>
+    <text class="g" x="100" y="36" text-anchor="middle" font-size="14">3. SKILL GUIDE</text>
+    <text class="w" x="100" y="70" text-anchor="middle" font-size="13">Citations · steps</text>
+    <text class="w" x="100" y="92" text-anchor="middle" font-size="13">Framework fields</text>
+    <text class="m" x="100" y="120" text-anchor="middle" font-size="12">Book methods</text>
+  </g>
+  <path d="M770,190 L810,190" stroke="#f6d98a" stroke-width="3"/>
+  <g transform="translate(820,120)">
+    <rect width="100" height="140" rx="16" fill="url(#gold)"/>
+    <text class="b" x="50" y="70" text-anchor="middle" font-size="14">YOU</text>
+    <text class="b" x="50" y="92" text-anchor="middle" font-size="14">GET</text>
+    <text class="b" x="50" y="114" text-anchor="middle" font-size="12">GUIDANCE</text>
+  </g>
+
+  <!-- Expect cards -->
+  <text class="h" x="480" y="320" text-anchor="middle" font-size="20">You should expect</text>
+  <g transform="translate(50,350)">
+    <rect width="270" height="100" rx="14" fill="#152047" stroke="#334155"/>
+    <text class="w" x="20" y="40" font-size="15">Cited answers</text>
+    <text class="m" x="20" y="68" font-size="13">skill_search + skill_cite</text>
+  </g>
+  <g transform="translate(345,350)">
+    <rect width="270" height="100" rx="14" fill="#152047" stroke="#334155"/>
+    <text class="w" x="20" y="40" font-size="15">Step procedures</text>
+    <text class="m" x="20" y="68" font-size="13">playbooks with session ids</text>
+  </g>
+  <g transform="translate(640,350)">
+    <rect width="270" height="100" rx="14" fill="#152047" stroke="#334155"/>
+    <text class="w" x="20" y="40" font-size="15">Socratic / Avicenna tutors</text>
+    <text class="m" x="20" y="68" font-size="13">one move at a time</text>
+  </g>
+
+  <text class="h" x="480" y="500" text-anchor="middle" font-size="20">You should not expect</text>
+  <g transform="translate(50,530)">
+    <rect width="270" height="90" rx="14" fill="#2a1520" stroke="#7f1d1d"/>
+    <text class="w" x="20" y="40" font-size="14">Invented book quotes</text>
+    <text class="m" x="20" y="68" font-size="12">Always require citations</text>
+  </g>
+  <g transform="translate(345,530)">
+    <rect width="270" height="90" rx="14" fill="#2a1520" stroke="#7f1d1d"/>
+    <text class="w" x="20" y="40" font-size="14">Full book dumps in chat</text>
+    <text class="m" x="20" y="68" font-size="12">Progressive skill load</text>
+  </g>
+  <g transform="translate(640,530)">
+    <rect width="270" height="90" rx="14" fill="#2a1520" stroke="#7f1d1d"/>
+    <text class="w" x="20" y="40" font-size="14">Medical advice from Canon</text>
+    <text class="m" x="20" y="68" font-size="12">Educational method only</text>
+  </g>
+
+  <text class="m" x="480" y="670" text-anchor="middle" font-size="13">Methods first · Full text second · Citations always · Local-first · No API keys</text>
+  <text class="m" x="480" y="698" text-anchor="middle" font-size="12">docs/examples  github.com/kazimrmerchant/book-guide-mcp</text>
+</svg>

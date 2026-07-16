@@ -6,9 +6,13 @@
 
 ### Visual overview
 
+![What to expect](assets/what-to-expect-flow.svg)
+
 ![Book Guide MCP L0–L4 infographic](assets/book-guide-infographic.svg)
 
 <p align="center"><img src="assets/book-guide-infographic-hero.png" alt="Hero visual" width="360"/></p>
+
+**Walkthroughs with sample output:** [examples/](examples/)
 
 ---
 

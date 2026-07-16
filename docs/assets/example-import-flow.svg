@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="100%" stop-color="#152047"/>
+    </linearGradient>
+    <style>
+      .h{font-family:system-ui,sans-serif;font-weight:800;fill:#fff}
+      .w{font-family:system-ui,sans-serif;font-weight:600;fill:#e2e8f0}
+      .m{font-family:system-ui,sans-serif;font-weight:500;fill:#94a3b8}
+      .c{font-family:ui-monospace,Consolas,monospace;font-weight:600;fill:#6ee7ff}
+      .y{font-family:system-ui,sans-serif;font-weight:700;fill:#f6d98a}
+      .b{font-family:system-ui,sans-serif;font-weight:700;fill:#0b1224}
+    </style>
+  </defs>
+  <rect width="900" height="520" fill="url(#bg)"/>
+  <text class="h" x="450" y="42" text-anchor="middle" font-size="24">Example: Import your book as a skill</text>
+  <text class="m" x="450" y="68" text-anchor="middle" font-size="14">ownership_attested · sandbox path · L4 package built locally</text>
+
+  <!-- pipeline -->
+  <g transform="translate(40,110)">
+    <rect width="160" height="120" rx="14" fill="#1e2a4a" stroke="#38bdf8"/>
+    <text class="y" x="80" y="36" text-anchor="middle" font-size="13">FILE</text>
+    <text class="w" x="80" y="70" text-anchor="middle" font-size="13">.md .epub</text>
+    <text class="m" x="80" y="96" text-anchor="middle" font-size="12">data/uploads/</text>
+  </g>
+  <text class="y" x="230" y="175" font-size="22">’</text>
+  <g transform="translate(260,110)">
+    <rect width="160" height="120" rx="14" fill="#1e2a4a" stroke="#a78bfa"/>
+    <text class="y" x="80" y="36" text-anchor="middle" font-size="13">IMPORT</text>
+    <text class="c" x="80" y="70" text-anchor="middle" font-size="11">skill_import_file</text>
+    <text class="m" x="80" y="96" text-anchor="middle" font-size="12">attested</text>
+  </g>
+  <text class="y" x="450" y="175" font-size="22">’</text>
+  <g transform="translate(480,110)">
+    <rect width="160" height="120" rx="14" fill="#1e2a4a" stroke="#f472b6"/>
+    <text class="y" x="80" y="36" text-anchor="middle" font-size="13">PACKAGE</text>
+    <text class="w" x="80" y="70" text-anchor="middle" font-size="13">L4 skill</text>
+    <text class="m" x="80" y="96" text-anchor="middle" font-size="12">library/</text>
+  </g>
+  <text class="y" x="670" y="175" font-size="22">’</text>
+  <g transform="translate(700,110)">
+    <rect width="160" height="120" rx="14" fill="#f6d98a"/>
+    <text class="b" x="80" y="50" text-anchor="middle" font-size="14">USE</text>
+    <text class="b" x="80" y="78" text-anchor="middle" font-size="13">playbook /</text>
+    <text class="b" x="80" y="100" text-anchor="middle" font-size="13">search / tutor</text>
+  </g>
+
+  <rect x="40" y="280" width="820" height="180" rx="16" fill="#152047" stroke="#334155"/>
+  <text class="h" x="450" y="320" text-anchor="middle" font-size="16">What success looks like</text>
+  <text class="w" x="80" y="360" font-size="14">" New book_id (e.g. team-handbook) appears in library_list</text>
+  <text class="w" x="80" y="390" font-size="14">" Auto scaffolding: excerpts, guided-study playbook, book-lens framework, curriculum</text>
+  <text class="w" x="80" y="420" font-size="14">" Path outside sandbox ’ clear error (not silent full-disk access)</text>
+  <text class="m" x="450" y="455" text-anchor="middle" font-size="13">See examples/sample_book.md · docs/examples/03-import-your-book.md</text>
+</svg>

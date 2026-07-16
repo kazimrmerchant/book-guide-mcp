@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="100%" stop-color="#152047"/>
+    </linearGradient>
+    <style>
+      .h{font-family:system-ui,sans-serif;font-weight:800;fill:#fff}
+      .w{font-family:system-ui,sans-serif;font-weight:600;fill:#e2e8f0}
+      .m{font-family:system-ui,sans-serif;font-weight:500;fill:#94a3b8}
+      .c{font-family:ui-monospace,Consolas,monospace;font-weight:600;fill:#6ee7ff}
+      .y{font-family:system-ui,sans-serif;font-weight:700;fill:#f6d98a}
+    </style>
+  </defs>
+  <rect width="900" height="560" fill="url(#bg)"/>
+  <text class="h" x="450" y="42" text-anchor="middle" font-size="24">Example: Socratic tutor</text>
+  <text class="m" x="450" y="68" text-anchor="middle" font-size="14">book_id = socratic-method · mode = socratic</text>
+
+  <!-- timeline -->
+  <line x1="80" y1="140" x2="820" y2="140" stroke="#334155" stroke-width="4"/>
+  <circle cx="120" cy="140" r="18" fill="#38bdf8"/>
+  <circle cx="320" cy="140" r="18" fill="#a78bfa"/>
+  <circle cx="520" cy="140" r="18" fill="#f472b6"/>
+  <circle cx="720" cy="140" r="18" fill="#f6d98a"/>
+
+  <text class="y" x="120" y="120" text-anchor="middle" font-size="12">START</text>
+  <text class="y" x="320" y="120" text-anchor="middle" font-size="12">YOU</text>
+  <text class="y" x="520" y="120" text-anchor="middle" font-size="12">PRESS</text>
+  <text class="y" x="720" y="120" text-anchor="middle" font-size="12">CITE</text>
+
+  <g transform="translate(40,180)">
+    <rect width="180" height="150" rx="12" fill="#1e2a4a" stroke="#38bdf8"/>
+    <text class="c" x="90" y="30" text-anchor="middle" font-size="12">tutor_start</text>
+    <text class="w" x="16" y="60" font-size="13">Agent asks ONE</text>
+    <text class="w" x="16" y="82" font-size="13">primary question</text>
+    <text class="m" x="16" y="120" font-size="12">Not a lecture</text>
+  </g>
+  <g transform="translate(250,180)">
+    <rect width="180" height="150" rx="12" fill="#1e2a4a" stroke="#a78bfa"/>
+    <text class="c" x="90" y="30" text-anchor="middle" font-size="12">your answer</text>
+    <text class="w" x="16" y="60" font-size="13">Short claim</text>
+    <text class="w" x="16" y="82" font-size="13">one sentence</text>
+    <text class="m" x="16" y="120" font-size="12">Learner message</text>
+  </g>
+  <g transform="translate(460,180)">
+    <rect width="180" height="150" rx="12" fill="#1e2a4a" stroke="#f472b6"/>
+    <text class="c" x="90" y="30" text-anchor="middle" font-size="12">tutor_turn</text>
+    <text class="w" x="16" y="60" font-size="13">Elenchus move</text>
+    <text class="w" x="16" y="82" font-size="13">test the claim</text>
+    <text class="m" x="16" y="120" font-size="12">Dignity first</text>
+  </g>
+  <g transform="translate(670,180)">
+    <rect width="180" height="150" rx="12" fill="#1e2a4a" stroke="#f6d98a"/>
+    <text class="c" x="90" y="30" text-anchor="middle" font-size="12">skill_cite</text>
+    <text class="w" x="16" y="60" font-size="13">Only then quote</text>
+    <text class="w" x="16" y="82" font-size="13">with locator</text>
+    <text class="m" x="16" y="120" font-size="12">No invented quotes</text>
+  </g>
+
+  <rect x="80" y="380" width="740" height="120" rx="16" fill="#152047" stroke="#334155"/>
+  <text class="h" x="450" y="420" text-anchor="middle" font-size="16">Sample agent line you should see</text>
+  <text class="w" x="450" y="455" text-anchor="middle" font-size="15">When is a question more helpful than an answer?</text>
+  <text class="m" x="450" y="485" text-anchor="middle" font-size="13">Then waits for you  continues with tutor_turn(session_id, &)</text>
+</svg>

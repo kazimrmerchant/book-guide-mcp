@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <style>
+      .h{font-family:system-ui,sans-serif;font-weight:800;fill:#fff}
+      .w{font-family:system-ui,sans-serif;font-weight:600;fill:#e2e8f0}
+      .m{font-family:system-ui,sans-serif;font-weight:500;fill:#94a3b8}
+      .c{font-family:ui-monospace,Consolas,monospace;font-weight:600;fill:#6ee7ff}
+      .y{font-family:system-ui,sans-serif;font-weight:700;fill:#f6d98a}
+    </style>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <text class="h" x="450" y="40" text-anchor="middle" font-size="24">Example: Avicenna method lens</text>
+  <text class="m" x="450" y="66" text-anchor="middle" font-size="14">framework hadd-burhan · educational only · not medical advice</text>
+
+  <!-- vertical steps -->
+  <g transform="translate(80,100)">
+    <rect width="740" height="70" rx="12" fill="#1e2a4a" stroke="#38bdf8"/>
+    <text class="y" x="24" y="28" font-size="14">1 DEFINITION</text>
+    <text class="w" x="24" y="52" font-size="14">Genus + differentia  what kind of thing, what sets it apart</text>
+  </g>
+  <g transform="translate(80,185)">
+    <rect width="740" height="70" rx="12" fill="#1e2a4a" stroke="#60a5fa"/>
+    <text class="y" x="24" y="28" font-size="14">2 DIVISION</text>
+    <text class="w" x="24" y="52" font-size="14">Parts / kinds so people stop talking past each other</text>
+  </g>
+  <g transform="translate(80,270)">
+    <rect width="740" height="70" rx="12" fill="#1e2a4a" stroke="#a78bfa"/>
+    <text class="y" x="24" y="28" font-size="14">3 DEMONSTRATION</text>
+    <text class="w" x="24" y="52" font-size="14">Reasons and causes  not a stack of famous names</text>
+  </g>
+  <g transform="translate(80,355)">
+    <rect width="740" height="70" rx="12" fill="#1e2a4a" stroke="#f472b6"/>
+    <text class="y" x="24" y="28" font-size="14">4 APPLICATION</text>
+    <text class="w" x="24" y="52" font-size="14">Map the rule onto one concrete case from your work</text>
+  </g>
+
+  <rect x="80" y="460" width="740" height="90" rx="14" fill="#152047" stroke="#f6d98a"/>
+  <text class="c" x="450" y="495" text-anchor="middle" font-size="13">skill_framework_apply ’ skill_search / skill_cite ’ skill_grade</text>
+  <text class="w" x="450" y="525" text-anchor="middle" font-size="14">Expect a filled worksheet with missing fields called out  then evidence</text>
+</svg>
