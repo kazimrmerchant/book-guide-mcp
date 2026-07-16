@@ -40,3 +40,7 @@ Thumbs.db
 
 # Local MCP host configs with absolute paths / secrets
 mcp.local.json
+
+# Local outreach automation artifacts (screenshots, temp scripts)
+outreach/out/
+marketing/

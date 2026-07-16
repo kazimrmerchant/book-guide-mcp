@@ -17,7 +17,7 @@ Paid “Skip review — go live now · $39” was **not** used.
 ## Product Hunt
 
 Still needs **email confirmation** on the Product Hunt account before product submit is unlocked.  
-Copy: `marketing/PRODUCT_HUNT.md`
+Copy: `outreach/PRODUCT_HUNT.md`
 
 ## Other
 
