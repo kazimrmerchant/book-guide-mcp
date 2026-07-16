@@ -17,6 +17,15 @@ keywords = [
   "avicenna",
   "education",
   "cursor",
+  "claude-desktop",
+  "claude-code",
+  "vscode",
+  "github-copilot",
+  "windsurf",
+  "zed",
+  "cline",
+  "continue",
+  "jetbrains",
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",

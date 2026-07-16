@@ -89,7 +89,7 @@
     <path d="M0,90 L0,20" stroke="#c4b5fd" stroke-width="2" opacity="0.5"/>
   </g>
 
-  <text class="muted" x="450" y="500" text-anchor="middle" font-size="16">From shelf í skill package í agent action</text>
+  <text class="muted" x="450" y="500" text-anchor="middle" font-size="16">From shelf ù skill package ù agent action</text>
 
   <!-- Levels -->
   <!-- L0 -->
@@ -135,7 +135,7 @@
     <circle cx="70" cy="50" r="28" fill="#0f172a" stroke="#f6d98a" stroke-width="3"/>
     <text x="70" y="57" text-anchor="middle" class="level" font-size="18">L4</text>
     <text x="120" y="42" class="name" font-size="26">Mentor</text>
-    <text x="120" y="72" class="desc" font-size="18">Socratic &amp; Avicenna tutors ∑ curriculum ∑ rubrics</text>
+    <text x="120" y="72" class="desc" font-size="18">Socratic &amp; Avicenna tutors ù curriculum ù rubrics</text>
   </g>
 
   <!-- Tagline -->
@@ -155,6 +155,7 @@
     <text x="100" y="28" text-anchor="middle" class="tag" font-size="15">No API keys required</text>
   </g>
 
-  <text class="muted" x="450" y="1320" text-anchor="middle" font-size="14">github.com/kazimrmerchant/book-guide-mcp  ∑  MIT</text>
-  <text class="muted" x="450" y="1355" text-anchor="middle" font-size="13">Your shelf. Your rules. Your agents guide.</text>
+  <text class="muted" x="450" y="1300" text-anchor="middle" font-size="12">Works with Cursor ù Claude Desktop ù Claude Code ù VS Code ù Windsurf ù Zed ù Cline ù Continue ù JetBrains</text>
+  <text class="muted" x="450" y="1330" text-anchor="middle" font-size="14">github.com/kazimrmerchant/book-guide-mcp  ù  MIT</text>
+  <text class="muted" x="450" y="1360" text-anchor="middle" font-size="13">Your shelf. Your rules. Your agent&#39;s guide.</text>
 </svg>

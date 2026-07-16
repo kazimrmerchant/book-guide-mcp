@@ -62,9 +62,23 @@ python -c "from book_skills_mcp.store import Library; print([p.card.id for p in 
 
 You should see at least `avicenna-canon` and `socratic-method`.
 
-### 2.2 Wire into Cursor (or any MCP host)
+### 2.2 Wire into your IDE / MCP host
 
-**Option A — edit MCP config** (Cursor: Settings → MCP, or your `mcp.json`):
+Book Guide MCP works with **any stdio MCP client**, including:
+
+| Host | Config tip |
+|------|------------|
+| **Cursor** | Settings → MCP, or `.cursor/mcp.json` |
+| **Claude Desktop** | Claude config JSON → `mcpServers` |
+| **Claude Code** | Claude Code MCP server config |
+| **VS Code + GitHub Copilot** | Copilot / Agent MCP settings or workspace MCP JSON |
+| **Windsurf** | MCP / AI Flow settings |
+| **Zed** | Agent / context server settings |
+| **Cline** | Cline MCP panel |
+| **Continue** | Continue MCP config |
+| **JetBrains** (IntelliJ, PyCharm, …) | AI Assistant / MCP bridge settings |
+
+**Option A — generic `mcpServers` block:**
 
 ```json
 {
@@ -83,7 +97,13 @@ You should see at least `avicenna-canon` and `socratic-method`.
 
 On macOS/Linux use the venv `python` path and forward slashes.
 
-**Option B — copy template:** [`examples/cursor-mcp.json`](../examples/cursor-mcp.json) and replace `REPLACE_WITH_ABSOLUTE_PATH`.
+**Option B — copy a template:**
+
+- [`examples/cursor-mcp.json`](../examples/cursor-mcp.json) — Cursor / Claude Desktop style  
+- [`examples/claude-desktop-mcp.json`](../examples/claude-desktop-mcp.json) — Claude Desktop  
+- [`examples/vscode-mcp.json`](../examples/vscode-mcp.json) — VS Code-style  
+
+Full host table: [README § Compatible IDEs & hosts](../README.md#compatible-ides--hosts).
 
 Restart the host. Confirm tools appear (e.g. `library_list`, `skill_match`, `tutor_start`).
 

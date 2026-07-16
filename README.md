@@ -7,6 +7,18 @@
 [![MCP](https://img.shields.io/badge/MCP-stdio-purple.svg)](https://modelcontextprotocol.io)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-green.svg)](https://www.python.org)
 
+**Works with any MCP host** (stdio):
+
+[![Cursor](https://img.shields.io/badge/Cursor-MCP-000000?logo=cursor&logoColor=white)](https://cursor.com)
+[![Claude Desktop](https://img.shields.io/badge/Claude_Desktop-MCP-d97706)](https://claude.ai/download)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-MCP-d97706)](https://docs.anthropic.com/en/docs/claude-code)
+[![VS Code](https://img.shields.io/badge/VS_Code-Copilot_MCP-007ACC?logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com)
+[![Windsurf](https://img.shields.io/badge/Windsurf-MCP-0ea5e9)](https://windsurf.com)
+[![Zed](https://img.shields.io/badge/Zed-MCP-0842a0)](https://zed.dev)
+[![Cline](https://img.shields.io/badge/Cline-MCP-22c55e)](https://cline.bot)
+[![Continue](https://img.shields.io/badge/Continue-MCP-6366f1)](https://continue.dev)
+[![JetBrains](https://img.shields.io/badge/JetBrains-AI_MCP-fe315d?logo=jetbrains&logoColor=white)](https://www.jetbrains.com)
+
 <p align="center">
   <img src="docs/assets/book-guide-infographic.svg" alt="Book Guide MCP infographic — L0 Library through L4 Mentor" width="720"/>
 </p>
@@ -43,7 +55,53 @@
 - **Agent builders** who want domain expertise without fine-tuning  
 - **Researchers & students** who want Socratic / structured tutoring from real texts  
 - **Teams** who want handbooks and SOPs as callable skills (private library folder)  
-- **Open-source MCP hosts** (Cursor, Claude Desktop, and any stdio MCP client)
+- **Anyone on an MCP-capable IDE or agent host** (see [Compatible IDEs & hosts](#compatible-ides--hosts))
+
+---
+
+## Compatible IDEs & hosts
+
+Book Guide MCP speaks standard **MCP over stdio**. If your app can run an MCP server, it can use your books as guides.
+
+| Host / IDE | How it fits |
+|------------|-------------|
+| **[Cursor](https://cursor.com)** | Chat / Composer / Agent — `mcp.json` or MCP settings |
+| **[Claude Desktop](https://claude.ai/download)** | Full MCP client — add server in Claude config |
+| **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** | Terminal agent with MCP tools + roots |
+| **[VS Code](https://code.visualstudio.com)** + **GitHub Copilot** | Agent mode MCP / Copilot MCP integration |
+| **[Windsurf](https://windsurf.com)** | AI Flow + MCP tools (often marketplace / JSON) |
+| **[Zed](https://zed.dev)** | Native MCP — tools & prompts as slash commands |
+| **[Cline](https://cline.bot)** | VS Code extension agent with MCP tools |
+| **[Continue](https://continue.dev)** | Open assistant in VS Code / JetBrains — MCP tools |
+| **[JetBrains IDEs](https://www.jetbrains.com)** (IntelliJ, PyCharm, …) | AI Assistant / MCP or ACP-style agent bridges |
+| **Other stdio MCP clients** | Any compliant host — same command: `python -m book_skills_mcp` |
+
+**Config shape is the same everywhere** (names of the JSON file differ by host):
+
+```json
+{
+  "mcpServers": {
+    "book-guide": {
+      "command": "python",
+      "args": ["-m", "book_skills_mcp"],
+      "cwd": "/absolute/path/to/book-guide-mcp",
+      "env": { "PYTHONUTF8": "1" }
+    }
+  }
+}
+```
+
+| Host | Typical config location |
+|------|-------------------------|
+| Cursor | `.cursor/mcp.json` or Cursor Settings → MCP |
+| Claude Desktop | Claude desktop config JSON (`mcpServers`) |
+| VS Code + Copilot | `.vscode/mcp.json` or Copilot MCP settings |
+| Windsurf | Windsurf MCP / settings UI |
+| Zed | `settings.json` context servers / Agent settings |
+| Continue | Continue config (`mcpServers` / YAML) |
+| Cline | Cline MCP settings panel |
+
+> **Note:** Feature depth (tools vs prompts vs resources) varies by host. Book Guide MCP is **tools-first** (plus prompts/resources where the host supports them). See the [MCP clients list](https://modelcontextprotocol.io/clients) for the latest ecosystem.
 
 ---
 
@@ -122,30 +180,18 @@ book-skills-mcp
 # or: python -m book_skills_mcp
 ```
 
-### Cursor / Claude Desktop
+### Add to your IDE / host
 
-Add to your MCP config (use **your** absolute paths):
-
-```json
-{
-  "mcpServers": {
-    "book-guide": {
-      "command": "python",
-      "args": ["-m", "book_skills_mcp"],
-      "cwd": "/absolute/path/to/book-guide-mcp",
-      "env": {
-        "PYTHONUTF8": "1"
-      }
-    }
-  }
-}
-```
+Paste the `mcpServers` block from [Compatible IDEs & hosts](#compatible-ides--hosts) into your host’s MCP config (table of paths above).
 
 Windows tip: point `command` at the venv interpreter:
 
 `C:/path/to/book-guide-mcp/.venv/Scripts/python.exe`
 
-See also [`examples/cursor-mcp.json`](examples/cursor-mcp.json).
+Templates:
+
+- [`examples/cursor-mcp.json`](examples/cursor-mcp.json) — Cursor / generic `mcpServers`
+- [`examples/vscode-mcp.json`](examples/vscode-mcp.json) — VS Code-style MCP entry
 
 ---
 

@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "book-guide": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "book_skills_mcp"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}
