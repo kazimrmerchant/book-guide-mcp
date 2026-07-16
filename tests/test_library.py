@@ -112,7 +112,11 @@ def test_import_markdown(tmp_path: Path):
 
 
 def test_build_skill_from_text_levels():
-    text = "# One\n\nHello world method steps here.\n\n# Two\n\nMore content about practice and judgment."
-    pkg = build_skill_from_text(text=text, title="Tiny", license_kind=LicenseKind.PUBLIC_DOMAIN)
+    text = (
+        "# One\n\nFirst, define the method steps. Second, apply the checklist procedure.\n\n"
+        "# Two\n\nYou should practice the framework and verify the guideline with exercises."
+    )
+    pkg = build_skill_from_text(text=text, title="Tiny Method", license_kind=LicenseKind.PUBLIC_DOMAIN)
     assert pkg.playbooks and pkg.frameworks and pkg.rubrics and pkg.curriculum
     assert pkg.effective_level().value == "L4"
+    assert any(s.id == "transfer" for s in pkg.playbooks[0].steps)

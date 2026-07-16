@@ -74,11 +74,25 @@ Many “is this just RAG?” fights are **part A vs C–E** confusion.
 
 ---
 
-## 7. Rubric (honest self-score before fixes)
+## 7. Rubric (honest self-score)
 
-Applied `avicenna-fidelity` to marketing-only product description: **failed** (~0.54) — weak definition/division in the *product text itself*, even though safety was strong.
+| When | Result |
+|------|--------|
+| Marketing slogan only | Failed ~0.54 (weak definition/division) |
+| Full definition + division + particular + safety | **Pass** ≥0.7 (see automated suite) |
 
 **Lesson:** ship the definition in agent instructions and examples, not only in README slogans.
+
+---
+
+## 8. All roadmap items (this pass)
+
+| Item | Status |
+|------|--------|
+| Genre detection (novels ≠ L4 playbooks) | `classify_genre` + narrative → L0/L1 |
+| Transfer test (fresh particular) | `skill_transfer_test` tool + playbook **transfer** step |
+| Host model supplies prose | Documented in server instructions + safety notes |
+| Re-run Avicenna + Socratic suite | `tests/test_challenge_books.py` |
 
 ---
 
@@ -95,4 +109,12 @@ skill_framework_apply(
 tutor_start(book_id="socratic-method", mode="socratic")
 tutor_turn(session_id=…, learner_message="This is just RAG with extra steps")
 # Expect: reply quotes that claim
+
+skill_transfer_test(
+  book_id="avicenna-canon",
+  trained_case="Import a handbook and run guided-study",
+  fresh_case="Use Socratic tutor on a PR design review"
+)
 ```
+
+Automated: `pytest tests/test_challenge_books.py -q`

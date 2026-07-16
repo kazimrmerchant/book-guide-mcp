@@ -146,6 +146,16 @@ class Curriculum(BaseModel):
     learning_paths: list[list[str]] = Field(default_factory=list)
 
 
+class TextGenre(str, Enum):
+    """Coarse genre for import scaffolding honesty."""
+
+    METHOD = "method"  # handbooks, textbooks, how-to
+    NARRATIVE = "narrative"  # novels, stories — weak playbooks
+    REFERENCE = "reference"  # glossaries, catalogs
+    MIXED = "mixed"
+    UNKNOWN = "unknown"
+
+
 class SkillPackage(BaseModel):
     card: SkillCard
     toc: list[TocEntry] = Field(default_factory=list)
@@ -154,6 +164,7 @@ class SkillPackage(BaseModel):
     frameworks: list[Framework] = Field(default_factory=list)
     rubrics: list[Rubric] = Field(default_factory=list)
     curriculum: Curriculum | None = None
+    genre: TextGenre = TextGenre.UNKNOWN
     full_text_allowed: bool = False
     built_at: str = Field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat()
@@ -161,6 +172,11 @@ class SkillPackage(BaseModel):
     builder_notes: list[str] = Field(default_factory=list)
 
     def effective_level(self) -> SkillLevel:
+        # Narrative imports should not claim full mentor maturity
+        if self.genre == TextGenre.NARRATIVE:
+            if self.excerpts and self.card.when_to_use:
+                return SkillLevel.L1_GUIDE
+            return SkillLevel.L0_LIBRARY
         if self.curriculum and self.rubrics:
             return SkillLevel.L4_MENTOR
         if self.frameworks:

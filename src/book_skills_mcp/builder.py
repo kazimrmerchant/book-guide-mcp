@@ -25,6 +25,7 @@ from book_skills_mcp.models import (
     SkillCard,
     SkillLevel,
     SkillPackage,
+    TextGenre,
     TocEntry,
 )
 from book_skills_mcp.paths import default_uploads_dir, import_sandbox_roots
@@ -186,7 +187,82 @@ def _heading_toc(text: str) -> list[TocEntry]:
     return toc
 
 
-def _auto_playbook(title: str, book_id: str) -> Playbook:
+def classify_genre(text: str, title: str = "") -> tuple[TextGenre, list[str], float]:
+    """Heuristic genre for honest scaffolding (method vs narrative).
+
+    Returns (genre, notes, method_score 0..1).
+    """
+    sample = (title + "\n" + text[:12000]).lower()
+    method_hits = 0
+    narrative_hits = 0
+    method_cues = (
+        "step",
+        "method",
+        "framework",
+        "checklist",
+        "how to",
+        "procedure",
+        "principle",
+        "definition",
+        "chapter",
+        "exercise",
+        "practice",
+        "guideline",
+        "protocol",
+        "you should",
+        "first,",
+        "second,",
+        "warning",
+        "do not",
+        "rubric",
+    )
+    narrative_cues = (
+        "once upon",
+        "he said",
+        "she said",
+        "they said",
+        "chapter 1",
+        "novel",
+        "protagonist",
+        "whispered",
+        "suddenly",
+        "love story",
+        "kingdom",
+        "dragon",
+        "murder",
+        "detective",
+    )
+    for cue in method_cues:
+        method_hits += sample.count(cue)
+    for cue in narrative_cues:
+        narrative_hits += sample.count(cue)
+    # Imperative density rough signal
+    imperatives = len(re.findall(r"\b(do|use|apply|define|list|write|ask|check|verify)\b", sample))
+    method_hits += min(imperatives, 20)
+    notes: list[str] = []
+    total = method_hits + narrative_hits + 1
+    method_score = method_hits / total
+    if method_hits >= narrative_hits + 3 and method_hits >= 4:
+        genre = TextGenre.METHOD
+        notes.append(f"Genre=method (method cues={method_hits}, narrative={narrative_hits}).")
+    elif narrative_hits >= method_hits + 2 and narrative_hits >= 3:
+        genre = TextGenre.NARRATIVE
+        notes.append(
+            f"Genre=narrative (method cues={method_hits}, narrative={narrative_hits}). "
+            "Scaffolding limited to L0–L1 (search/cite + guide card); weak auto-playbooks omitted."
+        )
+    elif method_hits >= 2 and narrative_hits >= 2:
+        genre = TextGenre.MIXED
+        notes.append(f"Genre=mixed (method={method_hits}, narrative={narrative_hits}).")
+    else:
+        genre = TextGenre.UNKNOWN
+        notes.append("Genre=unknown; defaulting to cautious method scaffolding.")
+    return genre, notes, round(method_score, 3)
+
+
+def _auto_playbook(title: str, book_id: str, genre: TextGenre = TextGenre.UNKNOWN) -> Playbook | None:
+    if genre == TextGenre.NARRATIVE:
+        return None  # honest: novels are not procedure handbooks
     return Playbook(
         id="guided-study",
         name="Guided study pass",
@@ -214,6 +290,19 @@ def _auto_playbook(title: str, book_id: str) -> Playbook:
                 success_criteria=["Concrete artifact produced", "Citation to an excerpt"],
             ),
             PlaybookStep(
+                id="transfer",
+                title="Transfer (fresh particular)",
+                instruction=(
+                    "Apply the same method to a *new* case not used above "
+                    "(different project, person, or constraint)."
+                ),
+                questions=[
+                    "What is the fresh particular?",
+                    "Which clause of the method still holds? What breaks?",
+                ],
+                success_criteria=["Second concrete case", "Note on transfer vs memorization"],
+            ),
+            PlaybookStep(
                 id="reflect",
                 title="Reflect",
                 instruction="Score yourself against the book's standards and name one next experiment.",
@@ -221,11 +310,37 @@ def _auto_playbook(title: str, book_id: str) -> Playbook:
                 success_criteria=["Honest gap analysis", "One next experiment"],
             ),
         ],
-        estimated_minutes=45,
+        estimated_minutes=55,
     )
 
 
-def _auto_framework(title: str) -> Framework:
+def _auto_framework(title: str, genre: TextGenre = TextGenre.UNKNOWN) -> Framework | None:
+    if genre == TextGenre.NARRATIVE:
+        return Framework(
+            id="theme-lens",
+            name="Theme / motif lens",
+            description=(
+                f"Literary reading lens for {title} (narrative genre). "
+                "Not a procedure handbook — themes, motifs, character claims."
+            ),
+            fields=[
+                FrameworkField(name="subject", description="Passage, character, or theme under examination."),
+                FrameworkField(name="claim", description="One defendable claim about the text."),
+                FrameworkField(name="evidence", description="Quoted or located support from excerpts."),
+                FrameworkField(
+                    name="counter_reading",
+                    description="Strongest alternative interpretation.",
+                    required=False,
+                ),
+                FrameworkField(name="citations", description="Excerpt ids / locators.", required=False),
+            ],
+            process=[
+                "State one claim (not a vibe).",
+                "Support with located evidence.",
+                "Steelman a counter-reading.",
+            ],
+            output_shape="subject → claim → evidence → counter_reading → citations",
+        )
     return Framework(
         id="book-lens",
         name="Book lens review",
@@ -240,14 +355,20 @@ def _auto_framework(title: str) -> Framework:
                 description="Excerpt IDs or locators supporting the recommendations.",
                 required=False,
             ),
+            FrameworkField(
+                name="fresh_particular",
+                description="A second, different case to test transfer (not the same example).",
+                required=False,
+            ),
         ],
         process=[
             "Search the skill for principles matching the context.",
             "Map each principle to a diagnosis.",
             "Propose recommendations with citations.",
+            "Transfer: apply to one fresh particular.",
             "List open questions the book does not settle.",
         ],
-        output_shape="context → principles → diagnosis → recommendations → citations",
+        output_shape="context → principles → diagnosis → recommendations → fresh_particular → citations",
     )
 
 
@@ -329,6 +450,7 @@ def build_skill_from_text(
     builder_notes: list[str] | None = None,
 ) -> SkillPackage:
     bid = validate_book_id(book_id or slugify(title)[:48] or "book")
+    genre, genre_notes, method_score = classify_genre(text, title)
     toc = _heading_toc(text)
     chunks = _chunk_paragraphs(text)
     excerpts: list[Excerpt] = []
@@ -347,23 +469,44 @@ def build_skill_from_text(
         )
     authors = authors or []
     domains = domains or ["general"]
+    if genre == TextGenre.NARRATIVE:
+        level = SkillLevel.L1_GUIDE
+        default_when = (
+            f"Use when discussing themes, characters, or claims *from* '{title}' "
+            f"with citations — not as a how-to procedure handbook."
+        )
+        default_not = (
+            "Do not treat narrative prose as operational SOPs. "
+            "Do not use for medical, legal, or emergency decisions. "
+            "Do not reproduce large copyrighted passages."
+        )
+        tags = domains + ["book-skill", "narrative", "genre-narrative"]
+    else:
+        level = SkillLevel.L4_MENTOR
+        default_when = (
+            f"Use when the agent should apply methods, frameworks, or teaching from "
+            f"'{title}' rather than generic advice. Not a raw RAG dump."
+        )
+        default_not = (
+            "Do not use for medical, legal, or emergency decisions as a substitute for professionals. "
+            "Do not reproduce large copyrighted passages. "
+            "Do not claim this is only retrieval if playbooks/frameworks are available."
+        )
+        tags = domains + ["book-skill", f"genre-{genre.value}"]
+
     card = SkillCard(
         id=bid,
         name=bid,
         title=title,
         authors=authors,
-        level=SkillLevel.L4_MENTOR,
-        when_to_use=when_to_use
-        or (
-            f"Use when the agent should apply methods, frameworks, or teaching from "
-            f"'{title}' rather than generic advice."
-        ),
-        when_not_to_use=(
-            "Do not use for medical, legal, or emergency decisions as a substitute for professionals. "
-            "Do not reproduce large copyrighted passages."
-        ),
+        level=level,
+        when_to_use=when_to_use or default_when,
+        when_not_to_use=default_not,
         domains=domains,
-        summary=f"Skill package built from '{title}'.",
+        summary=(
+            f"Skill package built from '{title}' "
+            f"(genre={genre.value}, method_score={method_score})."
+        ),
         license=license_kind,
         license_note=license_note
         or (
@@ -375,23 +518,38 @@ def build_skill_from_text(
         safety_notes=[
             "Prefer citations over paraphrase-as-quote.",
             "Historical scientific claims may be outdated; verify against modern sources.",
+            "Host model supplies prose; this MCP supplies methods, evidence, and session moves.",
         ],
-        tags=domains + ["book-skill"],
+        tags=tags,
     )
+    playbooks: list[Playbook] = []
+    pb = _auto_playbook(title, bid, genre)
+    if pb:
+        playbooks.append(pb)
+    frameworks: list[Framework] = []
+    fw = _auto_framework(title, genre)
+    if fw:
+        frameworks.append(fw)
+    # Narrative: still allow thin curriculum for discussion, but L1 effective level
+    curriculum = None if genre == TextGenre.NARRATIVE else _auto_curriculum(bid, toc, excerpts)
+    notes = list(builder_notes or []) + genre_notes
     pkg = SkillPackage(
         card=card,
         toc=toc,
         excerpts=excerpts,
-        playbooks=[_auto_playbook(title, bid)],
-        frameworks=[_auto_framework(title)],
-        rubrics=[_auto_rubric(title)],
-        curriculum=_auto_curriculum(bid, toc, excerpts),
+        playbooks=playbooks,
+        frameworks=frameworks,
+        rubrics=[_auto_rubric(title)] if genre != TextGenre.NARRATIVE else [],
+        curriculum=curriculum,
+        genre=genre,
         full_text_allowed=full_text_allowed and license_kind in {
             LicenseKind.PUBLIC_DOMAIN,
             LicenseKind.OPEN_LICENSE,
         },
-        builder_notes=builder_notes or [],
+        builder_notes=notes,
     )
+    # Align declared level with genre honesty
+    pkg.card.level = pkg.effective_level()
     return pkg
 
 

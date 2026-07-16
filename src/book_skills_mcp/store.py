@@ -19,6 +19,7 @@ from book_skills_mcp.models import (
     Rubric,
     SkillCard,
     SkillPackage,
+    TextGenre,
     TocEntry,
     TutorSession,
 )
@@ -99,6 +100,27 @@ def load_skill_dir(skill_dir: Path) -> SkillPackage | None:
         rights = skill_dir / "RIGHTS.md"
         if rights.exists() and "full_text_allowed: true" in rights.read_text(encoding="utf-8").lower():
             full_text_allowed = True
+        genre = TextGenre.UNKNOWN
+        meta_notes: list[str] = []
+        meta_path = skill_dir / "meta.json"
+        if meta_path.exists():
+            try:
+                meta = _read_json(meta_path)
+                if isinstance(meta, dict):
+                    if meta.get("genre"):
+                        genre = TextGenre(str(meta["genre"]))
+                    notes = meta.get("builder_notes")
+                    if isinstance(notes, list):
+                        meta_notes = [str(n) for n in notes]
+            except Exception:  # noqa: BLE001
+                genre = TextGenre.UNKNOWN
+        # Infer method genre for curated demo skills
+        if genre == TextGenre.UNKNOWN and (
+            "method" in " ".join(card.tags).lower()
+            or "socratic" in card.id
+            or "avicenna" in card.id
+        ):
+            genre = TextGenre.METHOD
         pkg = SkillPackage(
             card=card,
             toc=toc,
@@ -107,12 +129,18 @@ def load_skill_dir(skill_dir: Path) -> SkillPackage | None:
             frameworks=frameworks,
             rubrics=rubrics,
             curriculum=curriculum,
+            genre=genre,
             full_text_allowed=full_text_allowed,
+            builder_notes=meta_notes,
         )
         order = ["L0", "L1", "L2", "L3", "L4"]
         inferred = pkg.effective_level()
-        best = max(order.index(card.level.value), order.index(inferred.value))
-        pkg.card.level = type(card.level)(order[best])
+        # Curated method demos keep declared L4; narrative imports are capped by effective_level
+        if genre == TextGenre.NARRATIVE:
+            pkg.card.level = inferred
+        else:
+            best = max(order.index(card.level.value), order.index(inferred.value))
+            pkg.card.level = type(card.level)(order[best])
         return pkg
     except Exception as exc:  # noqa: BLE001 — surface bad packages, don't crash server
         log.exception("Failed to load skill at %s: %s", skill_dir, exc)
@@ -193,6 +221,14 @@ class Library:
         (path / "curriculum").mkdir(exist_ok=True)
 
         _write_json(path / "skill.json", pkg.card.model_dump(mode="json"))
+        _write_json(
+            path / "meta.json",
+            {
+                "genre": pkg.genre.value,
+                "effective_level": pkg.effective_level().value,
+                "builder_notes": pkg.builder_notes,
+            },
+        )
         _write_json(path / "toc.json", [t.model_dump(mode="json") for t in pkg.toc])
         _write_json(
             path / "excerpts" / "index.json",

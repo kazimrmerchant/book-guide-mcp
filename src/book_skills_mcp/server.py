@@ -24,6 +24,7 @@ from book_skills_mcp.tutor import (
     grade_with_rubric,
     record_mastery,
     start_tutor,
+    transfer_test,
     tutor_turn as run_tutor_turn,
 )
 
@@ -154,7 +155,9 @@ async def skill_open(
             "rubrics": [{"id": r.id, "name": r.name} for r in pkg.rubrics],
             "concepts": len(pkg.curriculum.concepts) if pkg.curriculum else 0,
             "excerpt_count": len(pkg.excerpts),
+            "genre": pkg.genre.value,
             "full_text_allowed": pkg.full_text_allowed,
+            "builder_notes": pkg.builder_notes[:8],
         }
     )
 
@@ -530,6 +533,41 @@ async def skill_grade(
 
 
 @mcp.tool(annotations={"readOnlyHint": True, "idempotentHint": True})
+async def skill_transfer_test(
+    book_id: str = Field(description="Skill id."),
+    trained_case: str = Field(
+        description="Case you already practiced with the method.",
+        min_length=3,
+        max_length=2000,
+    ),
+    fresh_case: str = Field(
+        description="A genuinely new particular (different project/person/constraint).",
+        min_length=3,
+        max_length=2000,
+    ),
+    concept_id: str | None = Field(default=None, description="Optional curriculum concept id."),
+    ctx: Context = None,
+) -> str:
+    """Avicenna transfer check: same universal, new particular. Returns a worksheet
+    (host agent fills it). If only the trained case works, that is imitation — not knowledge.
+    Read-only."""
+    pkg = _lib(ctx).get(book_id.strip())
+    if not pkg:
+        return _err(f"Unknown book_id '{book_id}'.")
+    try:
+        return _ok(
+            transfer_test(
+                pkg,
+                concept_id,
+                trained_case,
+                fresh_case,
+            )
+        )
+    except Exception as exc:  # noqa: BLE001
+        return _err(str(exc))
+
+
+@mcp.tool(annotations={"readOnlyHint": True, "idempotentHint": True})
 async def skill_curriculum(
     book_id: str = Field(description="Skill id."),
     ctx: Context = None,
@@ -562,6 +600,7 @@ async def skill_status(
             "effective_level": pkg.effective_level().value,
             "license": pkg.card.license.value,
             "path": str(path) if path else None,
+            "genre": pkg.genre.value,
             "counts": {
                 "toc": len(pkg.toc),
                 "excerpts": len(pkg.excerpts),
@@ -571,6 +610,7 @@ async def skill_status(
                 "concepts": len(pkg.curriculum.concepts) if pkg.curriculum else 0,
             },
             "safety_notes": pkg.card.safety_notes,
+            "builder_notes": pkg.builder_notes[:12],
         }
     )
 

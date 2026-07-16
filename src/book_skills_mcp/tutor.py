@@ -383,3 +383,58 @@ def grade_with_rubric(
         "criteria": details,
         "note": "Provide explicit criterion scores for fair grading; heuristics are a fallback only.",
     }
+
+
+def transfer_test(
+    pkg: SkillPackage,
+    concept_id: str | None,
+    trained_case: str,
+    fresh_case: str,
+) -> dict[str, Any]:
+    """Avicenna-style transfer check: same universal, new particular.
+
+    Returns a worksheet the host agent must complete — does not invent answers.
+    """
+    concept = None
+    if pkg.curriculum:
+        if concept_id:
+            concept = next(
+                (
+                    c
+                    for c in pkg.curriculum.concepts
+                    if c.id == concept_id or c.name.lower() == concept_id.lower()
+                ),
+                None,
+            )
+        if concept is None and pkg.curriculum.concepts:
+            concept = pkg.curriculum.concepts[0]
+    hits = []
+    q = concept.name if concept else (trained_case[:80] or pkg.card.title)
+    hits = [h.model_dump(mode="json") for h in search_library([pkg], q, book_id=pkg.card.id, limit=3)]
+    return {
+        "book_id": pkg.card.id,
+        "concept_id": concept.id if concept else None,
+        "concept": concept.name if concept else None,
+        "trained_case": trained_case.strip(),
+        "fresh_case": fresh_case.strip(),
+        "agent_instructions": [
+            "State the universal (method/definition) in one sentence (genus+differentia if Avicenna-mode).",
+            "Map trained_case → which clause of the universal applies.",
+            "Map fresh_case → which clause applies; note what breaks.",
+            "If only trained_case works, you have imitation, not knowledge (Avicenna transfer test).",
+            "Cite with skill_cite; do not invent quotes.",
+        ],
+        "worksheet": {
+            "universal": None,
+            "trained_mapping": None,
+            "fresh_mapping": None,
+            "transfer_pass": None,
+            "citations": [],
+        },
+        "related_excerpts": hits,
+        "pass_criteria": [
+            "Fresh case is genuinely different from trained case",
+            "Same universal covers both without special pleading",
+            "At least one citation locator",
+        ],
+    }
