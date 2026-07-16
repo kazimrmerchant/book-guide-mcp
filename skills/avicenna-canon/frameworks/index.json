@@ -1,0 +1,95 @@
+[
+  {
+    "id": "hadd-burhan",
+    "name": "Hadd → Burhan lens",
+    "description": "Analyze any claim with Avicennan method: definition, division, demonstration, application, objection.",
+    "source_chapter": "ch_002",
+    "fields": [
+      {
+        "name": "subject",
+        "description": "The term or claim under examination.",
+        "required": true,
+        "example": "What is a just law?"
+      },
+      {
+        "name": "definition",
+        "description": "Genus + differentia definition.",
+        "required": true,
+        "example": "A just law is a public rule that…"
+      },
+      {
+        "name": "division",
+        "description": "Main parts/kinds/aspects.",
+        "required": true
+      },
+      {
+        "name": "demonstration",
+        "description": "Reason/cause chain (not authority list).",
+        "required": true
+      },
+      {
+        "name": "particular",
+        "description": "Concrete case mapping.",
+        "required": true
+      },
+      {
+        "name": "objection_reply",
+        "description": "Strongest doubt and answer.",
+        "required": false
+      },
+      {
+        "name": "citations",
+        "description": "Excerpt ids supporting the method steps.",
+        "required": false
+      }
+    ],
+    "process": [
+      "Define before you evaluate.",
+      "Divide so parties share a map.",
+      "Demonstrate with reasons; cite authority only as pointer.",
+      "Apply to a particular.",
+      "Steelman an objection."
+    ],
+    "output_shape": "subject → definition → division → demonstration → particular → objection_reply → citations"
+  },
+  {
+    "id": "teacher-order",
+    "name": "Teacher's order gate",
+    "description": "Decide whether a learner is allowed to advance, Avicenna-style foundations gate.",
+    "source_chapter": "ch_008",
+    "fields": [
+      {
+        "name": "learner_definition",
+        "description": "Learner's current definition.",
+        "required": true
+      },
+      {
+        "name": "gate_definition",
+        "description": "pass/fail and why.",
+        "required": true
+      },
+      {
+        "name": "gate_division",
+        "description": "pass/fail and why.",
+        "required": true
+      },
+      {
+        "name": "gate_cause",
+        "description": "pass/fail and why.",
+        "required": true
+      },
+      {
+        "name": "next_move",
+        "description": "If fail: what to drill; if pass: next concept.",
+        "required": true
+      }
+    ],
+    "process": [
+      "Test definition quality.",
+      "Test division clarity.",
+      "Test causal explanation.",
+      "Only then advance."
+    ],
+    "output_shape": "gates → next_move"
+  }
+]

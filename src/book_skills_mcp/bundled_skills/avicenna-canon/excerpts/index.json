@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ex_0001",
+    "chapter_id": "ch_001",
+    "title": "Method before mass of claims",
+    "text": "A heap of assertions is not knowledge. Knowledge is ordered: we know what a thing is, how it divides, why it is so, and how the rule meets the particular case. Without method, memory of phrases masquerades as understanding. The student who can recite names but cannot define, divide, or apply has collected tokens, not science.",
+    "locator": "method/1§1",
+    "words": 78,
+    "tags": ["method", "knowledge", "pedagogy"]
+  },
+  {
+    "id": "ex_0002",
+    "chapter_id": "ch_002",
+    "title": "What a definition must do",
+    "text": "A sound definition states the genus — what kind of thing the subject is — and the differentia — what sets it apart within that kind. 'Virtue is good' is praise, not definition. 'A triangle is a figure' is incomplete. 'A triangle is a three-sided plane figure' approaches the work of definition: kind plus distinguishing mark. If the learner cannot supply genus and differentia, do not proceed to clever applications; return to the name of the thing.",
+    "locator": "method/2§1",
+    "words": 95,
+    "tags": ["definition", "hadd", "logic"]
+  },
+  {
+    "id": "ex_0003",
+    "chapter_id": "ch_002",
+    "title": "Against slogan definitions",
+    "text": "Slogans compress; definitions discipline. When a student says only 'balance' or 'nature' or 'reason' as if the word itself argued, ask: balance of what, under what measure, excluding what? Empty universals are comfortable because they cannot be tested. Demand a sentence that would be false if the wrong differentia were chosen.",
+    "locator": "method/2§2",
+    "words": 72,
+    "tags": ["definition", "clarity"]
+  },
+  {
+    "id": "ex_0004",
+    "chapter_id": "ch_003",
+    "title": "Division clarifies the battlefield",
+    "text": "After definition, divide the subject into its main parts, species, or aspects so that arguments do not talk past each other. Many disputes are failures of division: two people use one name for different parts. A good division is jointly exhaustive enough for the task and mutually clear. Do not multiply parts without need; do not hide a part that changes the conclusion.",
+    "locator": "method/3§1",
+    "words": 88,
+    "tags": ["division", "qisma", "analysis"]
+  },
+  {
+    "id": "ex_0005",
+    "chapter_id": "ch_004",
+    "title": "Demonstration is not authority-stacking",
+    "text": "To demonstrate is to show the reason or cause by which the conclusion follows, not merely to pile famous names. Authority may open a door for the beginner; it does not replace middle terms. Ask: what must be true for this to hold? What would falsify it? Where is the middle that links the subject to the predicate? A citation without a reason is a pointer, not a proof.",
+    "locator": "method/4§1",
+    "words": 96,
+    "tags": ["burhan", "demonstration", "logic"]
+  },
+  {
+    "id": "ex_0006",
+    "chapter_id": "ch_004",
+    "title": "Causes in teaching order",
+    "text": "When teaching causes, prefer the order that makes understanding stable: what the thing is, then the factors that bring it about or sustain it, then the end it serves if the subject has an end. Mixing final praise with missing definitions produces rhetoric. The learner should be able to restate the causal chain without the teacher's melody.",
+    "locator": "method/4§2",
+    "words": 82,
+    "tags": ["causes", "pedagogy"]
+  },
+  {
+    "id": "ex_0007",
+    "chapter_id": "ch_005",
+    "title": "Universals meet particulars",
+    "text": "A rule that never touches a case is idle; a case without a rule is anecdote. Application names a particular and shows which clause of the definition or division covers it. If the case does not fit, either the case is misdescribed or the universal needs refinement. Intellectual honesty is willingness to revise either side.",
+    "locator": "method/5§1",
+    "words": 80,
+    "tags": ["application", "particulars"]
+  },
+  {
+    "id": "ex_0008",
+    "chapter_id": "ch_006",
+    "title": "Objection without humiliation",
+    "text": "State the strongest doubt a fair opponent would raise. Answer the doubt, not the person. If the doubt stands, narrow your claim. Training the tongue to win while the mind loses is the opposite of demonstration. The aim is a shared clearer sentence, not a defeated face.",
+    "locator": "method/6§1",
+    "words": 70,
+    "tags": ["objection", "dialectic", "ethics"]
+  },
+  {
+    "id": "ex_0009",
+    "chapter_id": "ch_007",
+    "title": "Historical note on temperament (not clinical advice)",
+    "text": "In the classical medical tradition associated with Avicenna, health was often discussed in the language of temperament and balance of qualities — a historical framework. Modern medicine does not treat this language as a reliable diagnostic system. For agents and teachers: you may explain the historical idea for literacy in the history of science, but you must not prescribe treatments, herbs, or regimens from classical texts. Direct real health questions to licensed clinicians and contemporary evidence.",
+    "locator": "history/1§1",
+    "words": 110,
+    "tags": ["history", "safety", "temperament", "not-advice"]
+  },
+  {
+    "id": "ex_0010",
+    "chapter_id": "ch_008",
+    "title": "Do not skip the foundations",
+    "text": "The impatient teacher jumps to dazzling conclusions; the sound teacher refuses to build on sand. If definition is weak, stop. If division is confused, stop. If the learner cannot give a cause, do not reward fluency. Order is a kindness: it prevents the shame of confident error. Progress is measured by the learner's ability to reconstruct the chain alone.",
+    "locator": "pedagogy/1§1",
+    "words": 85,
+    "tags": ["pedagogy", "foundations", "teaching"]
+  },
+  {
+    "id": "ex_0011",
+    "chapter_id": "ch_001",
+    "title": "Knowledge versus imitation",
+    "text": "Imitation repeats the surface of a wise sentence. Knowledge can generate new correct sentences in unseen cases. Test the learner with a fresh particular. If only the textbook example works, you have trained a mirror, not a mind.",
+    "locator": "method/1§2",
+    "words": 55,
+    "tags": ["knowledge", "transfer", "assessment"]
+  },
+  {
+    "id": "ex_0012",
+    "chapter_id": "ch_005",
+    "title": "Measure and proportion in judgment",
+    "text": "Judgment fails by excess and defect relative to a measure. Name the measure before you praise or blame. Without a measure, 'too much' and 'too little' are moods. In practical matters, state what good you are optimizing and what constraint you will not violate.",
+    "locator": "method/5§2",
+    "words": 68,
+    "tags": ["judgment", "measure", "ethics"]
+  }
+]

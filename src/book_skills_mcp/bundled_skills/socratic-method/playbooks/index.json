@@ -1,0 +1,85 @@
+[
+  {
+    "id": "elenchus-loop",
+    "name": "Elenchus loop",
+    "description": "One full Socratic pass: claim → define → example → counter-example → test → synthesize.",
+    "source_chapter": "ch_005",
+    "level": "L4",
+    "estimated_minutes": 30,
+    "steps": [
+      {
+        "id": "claim",
+        "title": "Elicit claim",
+        "instruction": "Get one defendable sentence from the learner (or agree a provisional claim).",
+        "questions": ["What exactly are you claiming?", "Can we reduce this to one sentence?"],
+        "success_criteria": ["Single claim written down"]
+      },
+      {
+        "id": "define",
+        "title": "Define key terms",
+        "instruction": "Pick the load-bearing word(s). Ask for the learner’s definition.",
+        "questions": ["What do you mean by X?", "Does borderline case Y still count?"],
+        "success_criteria": ["Definition in learner’s words", "One borderline case checked"]
+      },
+      {
+        "id": "example",
+        "title": "Clear example",
+        "instruction": "Ask for a clear case where the claim holds.",
+        "questions": ["What is your best clean example?"],
+        "success_criteria": ["Concrete example"]
+      },
+      {
+        "id": "counter",
+        "title": "Counter-example",
+        "instruction": "Ask for or propose the most awkward case.",
+        "questions": ["What case most threatens this claim?"],
+        "success_criteria": ["Awkward case named", "Claim revised or defended"]
+      },
+      {
+        "id": "test",
+        "title": "Consistency test",
+        "instruction": "Check for tension with other accepted beliefs; assume the opposite once.",
+        "questions": ["If we keep both A and B, what follows?", "What breaks if the opposite is true?"],
+        "success_criteria": ["Tension named or cleared"]
+      },
+      {
+        "id": "synthesize",
+        "title": "Synthesize",
+        "instruction": "State the improved claim and one open question. Keep it short.",
+        "questions": ["What is solid now?", "What is the next smallest question?"],
+        "success_criteria": ["Improved claim", "One next question"]
+      }
+    ]
+  },
+  {
+    "id": "concept-tutor",
+    "name": "Concept tutor (Socratic)",
+    "description": "Teach a concept using only questions until a definition+example land.",
+    "source_chapter": "ch_001",
+    "level": "L2",
+    "estimated_minutes": 25,
+    "steps": [
+      {
+        "id": "prior",
+        "title": "Prior knowledge",
+        "instruction": "Ask what the learner already thinks the concept means.",
+        "questions": ["In one sentence, what is it?"],
+        "success_criteria": ["Initial sentence captured"]
+      },
+      {
+        "id": "refine",
+        "title": "Refine by cases",
+        "instruction": "Use example and counter-example to refine.",
+        "questions": ["Is Z an instance? Why or why not?"],
+        "success_criteria": ["Refined definition"]
+      },
+      {
+        "id": "transfer",
+        "title": "Transfer",
+        "instruction": "Ask the learner to apply the concept to a fresh case.",
+        "questions": ["How does this show up in your project?"],
+        "success_criteria": ["Transfer attempt"]
+      }
+    ]
+  }
+]

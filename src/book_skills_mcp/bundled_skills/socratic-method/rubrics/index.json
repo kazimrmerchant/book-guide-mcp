@@ -1,0 +1,40 @@
+[
+  {
+    "id": "socratic-quality",
+    "name": "Socratic dialogue quality",
+    "description": "Grades whether a tutoring turn was truly Socratic and ethical.",
+    "pass_threshold": 0.7,
+    "criteria": [
+      {
+        "id": "one_question",
+        "name": "One main question",
+        "description": "Avoids lecture dumps; keeps turn-taking.",
+        "weight": 1.2
+      },
+      {
+        "id": "claim_focus",
+        "name": "Claim focus",
+        "description": "Works on a clear sentence, not a vibe.",
+        "weight": 1.1
+      },
+      {
+        "id": "definition_work",
+        "name": "Definition work",
+        "description": "Presses meaning of load-bearing terms when needed.",
+        "weight": 1.0
+      },
+      {
+        "id": "non_humiliation",
+        "name": "Non-humiliation",
+        "description": "Tests sentences, not the person's worth.",
+        "weight": 1.4
+      },
+      {
+        "id": "boundary",
+        "name": "Boundary sense",
+        "description": "Stops questioning when safety/urgency/consent require it.",
+        "weight": 1.3
+      }
+    ]
+  }
+]

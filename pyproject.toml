@@ -1,0 +1,67 @@
+[project]
+name = "book-skills-mcp"
+version = "0.1.0"
+description = "Turn books you own (or public-domain links) into MCP skills: library, playbooks, frameworks, Socratic tutoring, and mentor sessions."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Book Skills MCP contributors" }]
+keywords = ["mcp", "books", "skills", "agents", "socratic", "avicenna", "education"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Education",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "mcp>=1.9.0",
+  "pydantic>=2.7",
+  "httpx>=0.27",
+  "ebooklib>=0.18",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
+  "pypdf>=5.0",
+  "python-slugify>=8.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "anyio>=4"]
+
+[project.scripts]
+book-skills-mcp = "book_skills_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/book-skills-mcp/book-skills-mcp"
+Repository = "https://github.com/book-skills-mcp/book-skills-mcp"
+Issues = "https://github.com/book-skills-mcp/book-skills-mcp/issues"
+Changelog = "https://github.com/book-skills-mcp/book-skills-mcp/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/book_skills_mcp"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/book_skills_mcp/bundled_skills" = "book_skills_mcp/bundled_skills"
+
+[tool.hatch.build]
+include = [
+  "src/book_skills_mcp/**",
+  "skills/**",
+  "examples/**",
+  "tests/**",
+  "README.md",
+  "LICENSE",
+  "CHANGELOG.md",
+  "SECURITY.md",
+  "CONTRIBUTING.md",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]

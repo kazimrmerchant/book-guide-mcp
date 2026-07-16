@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "book-skills": {
+      "command": "python",
+      "args": ["-m", "book_skills_mcp"],
+      "cwd": "REPLACE_WITH_ABSOLUTE_PATH/book-skills-mcp",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "avicenna-fidelity",
+    "name": "Avicennan method fidelity",
+    "description": "Grades whether work follows ordered method rather than slogan reasoning.",
+    "pass_threshold": 0.7,
+    "criteria": [
+      {
+        "id": "definition_quality",
+        "name": "Definition quality",
+        "description": "Genus + differentia; not a slogan.",
+        "weight": 1.4,
+        "levels": {
+          "poor": "No definition or pure slogan",
+          "fair": "Partial genus or vague differentia",
+          "good": "Clear genus + differentia",
+          "excellent": "Definition plus rejected alternatives"
+        }
+      },
+      {
+        "id": "division_clarity",
+        "name": "Division clarity",
+        "description": "Parts/kinds are useful and non-confusing.",
+        "weight": 1.0
+      },
+      {
+        "id": "demonstration",
+        "name": "Demonstration",
+        "description": "Reasons/causes present; not mere name-dropping.",
+        "weight": 1.3
+      },
+      {
+        "id": "application",
+        "name": "Application",
+        "description": "Particular case mapped to the universal.",
+        "weight": 1.1
+      },
+      {
+        "id": "safety_humility",
+        "name": "Safety & humility",
+        "description": "Historical vs modern distinguished; no false medical advice.",
+        "weight": 1.2
+      }
+    ]
+  }
+]

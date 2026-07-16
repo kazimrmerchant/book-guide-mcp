@@ -1,0 +1,43 @@
+{
+  "id": "avicenna-canon",
+  "name": "avicenna-canon",
+  "title": "Avicenna (Ibn Sina) — Canon of Method & Healing Wisdom (Educational Skill)",
+  "authors": ["Ibn Sina (Avicenna)", "Book Skills MCP editors (curated public-domain pedagogy)"],
+  "edition": "Educational synthesis 1.0 (not a full critical edition)",
+  "language": "en",
+  "level": "L4",
+  "when_to_use": "Use when teaching or reasoning in an Avicennan order: precise definition (hadd), division of the subject, causal demonstration (burhan), and application to particulars. Also for history-of-ideas work on Islamic Golden Age medicine/philosophy, logic hygiene, and structured Socratic-adjacent tutoring that prefers syllogistic clarity over slogans.",
+  "when_not_to_use": "Do NOT use as medical advice, diagnosis, or treatment. Classical medical claims may be false or dangerous today. Do not use for emergency care. Do not treat this package as a complete translation of al-Qānūn fī al-Ṭibb.",
+  "domains": [
+    "philosophy",
+    "history-of-science",
+    "logic",
+    "pedagogy",
+    "islamic-philosophy",
+    "education"
+  ],
+  "summary": "L4 mentor skill: Avicenna-inspired methods for definition, division, demonstration, and application, plus carefully framed educational excerpts on method (not clinical protocols).",
+  "license": "public_domain",
+  "license_note": "Pedagogical synthesis and short public-domain-oriented educational excerpts. Classical works of Ibn Sina are in the public domain; this package is an original skill curation for agents, not a publisher's critical text.",
+  "sources": [
+    "Public-domain tradition of Ibn Sina / Avicenna (d. 1037)",
+    "Educational paraphrase of methodological themes from the Canon tradition and logical works"
+  ],
+  "safety_notes": [
+    "Educational / historical only — never clinical advice.",
+    "Verify any scientific claim against modern peer-reviewed sources.",
+    "Prefer citations from this package over invented 'Avicenna said' quotes.",
+    "If the user needs medical help, direct them to licensed professionals."
+  ],
+  "tags": [
+    "avicenna",
+    "ibn-sina",
+    "canon",
+    "socratic-adjacent",
+    "definition",
+    "burhan",
+    "mentor",
+    "L4"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,148 @@
+{
+  "book_id": "socratic-method",
+  "concepts": [
+    {
+      "id": "concept_001",
+      "name": "Inquiry over performance",
+      "summary": "Socratic work aims at clearer claims, not theatrical wins.",
+      "chapter_id": "ch_001",
+      "prerequisites": [],
+      "key_questions": [
+        "When is a question more helpful than an answer?",
+        "When must you abandon the method for safety?",
+        "How is methodological ignorance different from refusing to help?"
+      ],
+      "misconceptions": [
+        "Socratic teaching means never giving information.",
+        "Winning an argument is the same as teaching."
+      ],
+      "excerpt_ids": ["ex_0001"]
+    },
+    {
+      "id": "concept_002",
+      "name": "Eliciting a claim",
+      "summary": "Get one defendable sentence before examining.",
+      "chapter_id": "ch_002",
+      "prerequisites": ["concept_001"],
+      "key_questions": [
+        "What is your claim in one sentence?",
+        "Which of these three claims should we examine first?",
+        "Will you accept this provisional claim for testing?"
+      ],
+      "misconceptions": [
+        "You can examine a mood as if it were a proposition."
+      ],
+      "excerpt_ids": ["ex_0002"]
+    },
+    {
+      "id": "concept_003",
+      "name": "Definitions in dialogue",
+      "summary": "Load-bearing words need learner-owned definitions and borderline tests.",
+      "chapter_id": "ch_003",
+      "prerequisites": ["concept_002"],
+      "key_questions": [
+        "What do you mean by X?",
+        "Does borderline case Y still count as X?",
+        "Are we using one word for two ideas?"
+      ],
+      "misconceptions": [
+        "Dictionary vibes are enough.",
+        "Disagreement is always about values, never vocabulary."
+      ],
+      "excerpt_ids": ["ex_0003", "ex_0010"]
+    },
+    {
+      "id": "concept_004",
+      "name": "Examples and counter-examples",
+      "summary": "Stress-test claims with clean and awkward cases.",
+      "chapter_id": "ch_004",
+      "prerequisites": ["concept_003"],
+      "key_questions": [
+        "What is a clean example?",
+        "What is the most awkward case?",
+        "Does the claim need revision?"
+      ],
+      "misconceptions": [
+        "Counter-examples are attacks on the person."
+      ],
+      "excerpt_ids": ["ex_0004"]
+    },
+    {
+      "id": "concept_005",
+      "name": "Elenchus",
+      "summary": "Test consistency; target sentences; assume the opposite once.",
+      "chapter_id": "ch_005",
+      "prerequisites": ["concept_004"],
+      "key_questions": [
+        "If both A and B are true, what follows that you reject?",
+        "What breaks if we assume the opposite?",
+        "How do you say the tension without humiliation?"
+      ],
+      "misconceptions": [
+        "Elenchus means embarrassing the student.",
+        "Contrarianism for sport is the same as testing."
+      ],
+      "excerpt_ids": ["ex_0005", "ex_0009"]
+    },
+    {
+      "id": "concept_006",
+      "name": "Aporia",
+      "summary": "Recognized stuckness is a station; name what is solid vs open.",
+      "chapter_id": "ch_006",
+      "prerequisites": ["concept_005"],
+      "key_questions": [
+        "What exactly is unknown now?",
+        "What is still solid?",
+        "What is the smallest next question?"
+      ],
+      "misconceptions": [
+        "Being stuck means the dialogue failed."
+      ],
+      "excerpt_ids": ["ex_0006"]
+    },
+    {
+      "id": "concept_007",
+      "name": "Synthesis",
+      "summary": "Short improved claim + one next question; avoid lecture dumps.",
+      "chapter_id": "ch_007",
+      "prerequisites": ["concept_006"],
+      "key_questions": [
+        "What is the improved claim?",
+        "What remains open?",
+        "Can you say the synthesis in four sentences or fewer?"
+      ],
+      "misconceptions": [
+        "A good close is a long monologue."
+      ],
+      "excerpt_ids": ["ex_0007"]
+    },
+    {
+      "id": "concept_008",
+      "name": "Ethics of questioning",
+      "summary": "Dignity, consent, and safety outrank cleverness.",
+      "chapter_id": "ch_008",
+      "prerequisites": ["concept_001"],
+      "key_questions": [
+        "Should we be in Socratic mode right now?",
+        "Did the user ask for answers rather than questions?",
+        "Is there urgency that makes dialogue the wrong tool?"
+      ],
+      "misconceptions": [
+        "Always question, no matter the context."
+      ],
+      "excerpt_ids": ["ex_0008"]
+    }
+  ],
+  "learning_paths": [
+    [
+      "concept_001",
+      "concept_002",
+      "concept_003",
+      "concept_004",
+      "concept_005",
+      "concept_006",
+      "concept_007"
+    ],
+    ["concept_001", "concept_008"]
+  ]
+}

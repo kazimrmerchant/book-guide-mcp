@@ -1,0 +1,10 @@
+[
+  {"id": "ch_001", "title": "What Socratic teaching is for", "level": 1, "locator": "soc/1", "summary": "Inquiry over performance."},
+  {"id": "ch_002", "title": "Elicit a claim", "level": 1, "locator": "soc/2", "summary": "Get a sentence on the table."},
+  {"id": "ch_003", "title": "Definitions", "level": 1, "locator": "soc/3", "summary": "What do you mean by X?"},
+  {"id": "ch_004", "title": "Examples and counter-examples", "level": 1, "locator": "soc/4", "summary": "Stress-test the claim."},
+  {"id": "ch_005", "title": "Elenchus (testing)", "level": 1, "locator": "soc/5", "summary": "Expose tension without cruelty."},
+  {"id": "ch_006", "title": "Aporia and humility", "level": 1, "locator": "soc/6", "summary": "Productive not-knowing."},
+  {"id": "ch_007", "title": "Synthesis and next question", "level": 1, "locator": "soc/7", "summary": "Close a loop; open a better one."},
+  {"id": "ch_008", "title": "Ethics of the method", "level": 1, "locator": "soc/8", "summary": "When to stop questioning."}
+]

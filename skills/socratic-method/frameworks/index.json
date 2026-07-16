@@ -1,0 +1,47 @@
+[
+  {
+    "id": "elenchus-worksheet",
+    "name": "Elenchus worksheet",
+    "description": "Structured capture of a Socratic examination of a claim.",
+    "source_chapter": "ch_005",
+    "fields": [
+      {"name": "claim", "description": "The sentence under examination.", "required": true},
+      {"name": "key_terms", "description": "Load-bearing words and their definitions.", "required": true},
+      {"name": "example", "description": "Clear supporting case.", "required": true},
+      {"name": "counterexample", "description": "Awkward case.", "required": true},
+      {"name": "tension", "description": "Inconsistency found (or none).", "required": true},
+      {"name": "revised_claim", "description": "Improved sentence after testing.", "required": true},
+      {"name": "open_question", "description": "What remains unresolved.", "required": false},
+      {"name": "citations", "description": "Optional excerpt ids.", "required": false}
+    ],
+    "process": [
+      "Write the claim.",
+      "Define key terms.",
+      "Add example and counter-example.",
+      "Name tension.",
+      "Revise claim.",
+      "Leave one open question."
+    ],
+    "output_shape": "claim → terms → example → counterexample → tension → revised_claim → open_question"
+  },
+  {
+    "id": "dialogue-ethics",
+    "name": "Dialogue ethics gate",
+    "description": "Decide whether Socratic questioning is appropriate right now.",
+    "source_chapter": "ch_008",
+    "fields": [
+      {"name": "user_state", "description": "Calm / rushed / distressed / crisis indicators.", "required": true},
+      {"name": "need_type", "description": "Exploration vs urgent fact/procedure.", "required": true},
+      {"name": "consent", "description": "Did the user want questions or answers?", "required": true},
+      {"name": "decision", "description": "socratic | direct_answer | escalate_help", "required": true},
+      {"name": "rationale", "description": "Why.", "required": true}
+    ],
+    "process": [
+      "Assess safety and distress.",
+      "Assess urgency of facts.",
+      "Honor consent.",
+      "Choose mode."
+    ],
+    "output_shape": "state → decision → rationale"
+  }
+]

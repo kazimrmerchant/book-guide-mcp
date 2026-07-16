@@ -1,0 +1,92 @@
+[
+  {
+    "id": "ex_0001",
+    "chapter_id": "ch_001",
+    "title": "Inquiry, not performance",
+    "text": "Socratic teaching is not a quiz show and not a courtroom ambush. It is a shared attempt to make a claim clearer than it was. The teacher’s ignorance is methodological: a willingness to test, not a refusal to help. If the learner needs a fact to stay safe, give the fact; then, if appropriate, return to questions.",
+    "locator": "soc/1§1",
+    "words": 78,
+    "tags": ["purpose", "safety", "pedagogy"]
+  },
+  {
+    "id": "ex_0002",
+    "chapter_id": "ch_002",
+    "title": "Put a claim on the table",
+    "text": "You cannot examine a vibe. Ask for one sentence the learner is willing to defend. If they offer three claims, pick one. If they offer none, offer a provisional claim and ask whether they accept it. The quality of the dialogue is bounded by the sharpness of the claim.",
+    "locator": "soc/2§1",
+    "words": 70,
+    "tags": ["claim", "opening"]
+  },
+  {
+    "id": "ex_0003",
+    "chapter_id": "ch_003",
+    "title": "What do you mean?",
+    "text": "Many arguments die in the dictionary they never wrote. When a key word does heavy work — justice, simple, secure, done, talent — ask for a definition in the learner’s own words. Then ask whether a borderline case still fits. Definitions are tools; if the tool slips, admit it and retune.",
+    "locator": "soc/3§1",
+    "words": 75,
+    "tags": ["definition"]
+  },
+  {
+    "id": "ex_0004",
+    "chapter_id": "ch_004",
+    "title": "Example and counter-example",
+    "text": "A claim that cannot survive an example is rhetoric. A claim that cannot survive a counter-example is dogma. Ask: give me a clear case where this is true. Now give me the most awkward case. If the awkward case breaks the claim, revise the claim; do not insult the case.",
+    "locator": "soc/4§1",
+    "words": 72,
+    "tags": ["examples", "counterexamples"]
+  },
+  {
+    "id": "ex_0005",
+    "chapter_id": "ch_005",
+    "title": "Elenchus without humiliation",
+    "text": "Elenchus tests consistency: if A and B cannot both be true as stated, say so gently and invite repair. The target is the sentence, not the self-worth of the speaker. Humiliation produces silence or theater; neither is understanding. Prefer: ‘If we keep both claims, what follows that you would reject?’",
+    "locator": "soc/5§1",
+    "words": 80,
+    "tags": ["elenchus", "ethics"]
+  },
+  {
+    "id": "ex_0006",
+    "chapter_id": "ch_006",
+    "title": "Aporia is not failure",
+    "text": "Aporia — a recognized stuckness — is a station, not a crash. Name what is unknown. Separate what is still solid from what collapsed. Choose the smallest next question that would unstick the work. False confidence is a more expensive failure than honest aporia.",
+    "locator": "soc/6§1",
+    "words": 68,
+    "tags": ["aporia", "humility"]
+  },
+  {
+    "id": "ex_0007",
+    "chapter_id": "ch_007",
+    "title": "Short synthesis, then a better question",
+    "text": "After a productive stretch, offer a brief synthesis: here is the improved claim; here is what remains open. Then ask one next question. Long lectures break the method. If you must explain, explain briefly and return the ball.",
+    "locator": "soc/7§1",
+    "words": 62,
+    "tags": ["synthesis", "turn-taking"]
+  },
+  {
+    "id": "ex_0008",
+    "chapter_id": "ch_008",
+    "title": "When to stop questioning",
+    "text": "Stop the method when the person is unsafe, exhausted, coerced, or asking for a concrete procedure they cannot discover by dialogue in time. Dignity outranks cleverness. Consent matters: a learner may ask for a direct answer; honor that, then optionally resume questions later.",
+    "locator": "soc/8§1",
+    "words": 70,
+    "tags": ["ethics", "boundaries"]
+  },
+  {
+    "id": "ex_0009",
+    "chapter_id": "ch_005",
+    "title": "Assume the opposite",
+    "text": "A reliable test: assume the opposite of the learner’s claim and ask what breaks. If nothing breaks, the claim may be empty. If everything breaks, the claim may be load-bearing — then ask why. This is not contrarianism for sport; it is a stress test with a purpose.",
+    "locator": "soc/5§2",
+    "words": 72,
+    "tags": ["elenchus", "technique"]
+  },
+  {
+    "id": "ex_0010",
+    "chapter_id": "ch_003",
+    "title": "Shared vocabulary",
+    "text": "If two people use one word for two ideas, they will fight forever and call it principle. Pause and split the word: sense A and sense B. Ask which sense the claim needs. Many ‘deep disagreements’ dissolve into vocabulary debt.",
+    "locator": "soc/3§2",
+    "words": 65,
+    "tags": ["definition", "disambiguation"]
+  }
+]

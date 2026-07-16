@@ -1,0 +1,153 @@
+{
+  "book_id": "avicenna-canon",
+  "concepts": [
+    {
+      "id": "concept_001",
+      "name": "Method over heaps of claims",
+      "summary": "Knowledge requires ordered method, not memorized slogans.",
+      "chapter_id": "ch_001",
+      "prerequisites": [],
+      "key_questions": [
+        "What is the difference between collecting claims and knowing?",
+        "How would you test whether someone understands rather than imitates?",
+        "Why is method a kindness to the learner?"
+      ],
+      "misconceptions": [
+        "Fluency of speech equals understanding.",
+        "More quotations always mean stronger knowledge."
+      ],
+      "excerpt_ids": ["ex_0001", "ex_0011"]
+    },
+    {
+      "id": "concept_002",
+      "name": "Definition (hadd)",
+      "summary": "Define with genus and differentia before arguing further.",
+      "chapter_id": "ch_002",
+      "prerequisites": ["concept_001"],
+      "key_questions": [
+        "What is the genus of your subject?",
+        "What is the differentia?",
+        "Give a slogan that fails as a definition and fix it."
+      ],
+      "misconceptions": [
+        "A praise-word is a definition.",
+        "One-word labels are enough."
+      ],
+      "excerpt_ids": ["ex_0002", "ex_0003"]
+    },
+    {
+      "id": "concept_003",
+      "name": "Division (qisma)",
+      "summary": "Divide the subject so disputes share a map.",
+      "chapter_id": "ch_003",
+      "prerequisites": ["concept_002"],
+      "key_questions": [
+        "What are the main parts of this subject?",
+        "Where do people usually conflate two parts?",
+        "What part, if missing, would change the conclusion?"
+      ],
+      "misconceptions": [
+        "Any list of bullet points is a good division.",
+        "Division is optional if the definition sounds nice."
+      ],
+      "excerpt_ids": ["ex_0004"]
+    },
+    {
+      "id": "concept_004",
+      "name": "Demonstration (burhan)",
+      "summary": "Show reasons and causes; authority is a pointer, not a proof.",
+      "chapter_id": "ch_004",
+      "prerequisites": ["concept_003"],
+      "key_questions": [
+        "What is the middle term linking your claim?",
+        "What would falsify your demonstration?",
+        "Where are you stacking names instead of reasons?"
+      ],
+      "misconceptions": [
+        "A famous name is a demonstration.",
+        "If it feels true, the chain is optional."
+      ],
+      "excerpt_ids": ["ex_0005", "ex_0006"]
+    },
+    {
+      "id": "concept_005",
+      "name": "Application to particulars",
+      "summary": "Map universals onto concrete cases; revise either side if needed.",
+      "chapter_id": "ch_005",
+      "prerequisites": ["concept_004"],
+      "key_questions": [
+        "Name a particular case for your rule.",
+        "Which clause of the definition covers it?",
+        "What measure are you using to judge excess and defect?"
+      ],
+      "misconceptions": [
+        "Examples are decorations, not tests.",
+        "Anecdotes replace rules."
+      ],
+      "excerpt_ids": ["ex_0007", "ex_0012"]
+    },
+    {
+      "id": "concept_006",
+      "name": "Objection and reply",
+      "summary": "Steelman doubts; seek clearer sentences, not defeated faces.",
+      "chapter_id": "ch_006",
+      "prerequisites": ["concept_005"],
+      "key_questions": [
+        "What is the strongest fair objection?",
+        "Do you answer or narrow the claim?",
+        "Where might you be arguing against a weak caricature?"
+      ],
+      "misconceptions": [
+        "Winning the person is the same as winning the argument.",
+        "Objections are disloyal."
+      ],
+      "excerpt_ids": ["ex_0008"]
+    },
+    {
+      "id": "concept_007",
+      "name": "Historical health ideas with safety",
+      "summary": "Explain classical temperament language only as history; never as clinical advice.",
+      "chapter_id": "ch_007",
+      "prerequisites": ["concept_001"],
+      "key_questions": [
+        "How do you frame classical medicine as history?",
+        "What must you refuse to do for a user with symptoms?",
+        "How do you contrast modern standards without inventing a treatment plan?"
+      ],
+      "misconceptions": [
+        "Old medical authorities are still clinically reliable.",
+        "Educational discussion equals permission to prescribe."
+      ],
+      "excerpt_ids": ["ex_0009"]
+    },
+    {
+      "id": "concept_008",
+      "name": "Teacher's order",
+      "summary": "Do not advance past weak foundations; measure progress by reconstruction.",
+      "chapter_id": "ch_008",
+      "prerequisites": ["concept_002", "concept_004"],
+      "key_questions": [
+        "When should a teacher stop a flashy discussion?",
+        "How do you test transfer with a fresh particular?",
+        "What does kindness look like as intellectual order?"
+      ],
+      "misconceptions": [
+        "Skipping foundations saves time.",
+        "Confidence is a proxy for mastery."
+      ],
+      "excerpt_ids": ["ex_0010", "ex_0011"]
+    }
+  ],
+  "learning_paths": [
+    [
+      "concept_001",
+      "concept_002",
+      "concept_003",
+      "concept_004",
+      "concept_005",
+      "concept_006",
+      "concept_008"
+    ],
+    ["concept_001", "concept_007"]
+  ]
+}

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Runtime / user data (do not ship user books or session PII)
+data/uploads/*
+!data/uploads/.gitkeep
+sessions/*
+!sessions/.gitkeep
+library/*
+!library/.gitkeep
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local MCP host configs with absolute paths / secrets
+mcp.local.json

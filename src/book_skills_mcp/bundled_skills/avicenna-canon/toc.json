@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ch_001",
+    "title": "On knowledge and the need for method",
+    "level": 1,
+    "locator": "method/1",
+    "summary": "Why unordered opinion is not science."
+  },
+  {
+    "id": "ch_002",
+    "title": "Definition (hadd)",
+    "level": 1,
+    "locator": "method/2",
+    "summary": "Genus and differentia; what a thing is."
+  },
+  {
+    "id": "ch_003",
+    "title": "Division (qisma)",
+    "level": 1,
+    "locator": "method/3",
+    "summary": "Parts, species, and aspects of a subject."
+  },
+  {
+    "id": "ch_004",
+    "title": "Demonstration (burhan)",
+    "level": 1,
+    "locator": "method/4",
+    "summary": "Reasons and causes, not mere citation of authority."
+  },
+  {
+    "id": "ch_005",
+    "title": "Particulars and application",
+    "level": 1,
+    "locator": "method/5",
+    "summary": "Bringing the universal under a concrete case."
+  },
+  {
+    "id": "ch_006",
+    "title": "Objections and replies",
+    "level": 1,
+    "locator": "method/6",
+    "summary": "Steelman doubts; answer without humiliation."
+  },
+  {
+    "id": "ch_007",
+    "title": "Temperament, balance, and caution (historical)",
+    "level": 1,
+    "locator": "history/1",
+    "summary": "Historical health concepts — educational framing only."
+  },
+  {
+    "id": "ch_008",
+    "title": "The teacher and the learner",
+    "level": 1,
+    "locator": "pedagogy/1",
+    "summary": "Order of teaching; do not skip foundations."
+  }
+]

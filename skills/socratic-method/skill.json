@@ -1,0 +1,33 @@
+{
+  "id": "socratic-method",
+  "name": "socratic-method",
+  "title": "Socratic Method — Elenchus as a Teaching Skill",
+  "authors": ["Socratic tradition (public domain)", "Book Skills MCP editors (curated pedagogy)"],
+  "edition": "Educational synthesis 1.0",
+  "language": "en",
+  "level": "L4",
+  "when_to_use": "Use when the agent should teach or investigate by questions: elicit a claim, test definitions, expose contradictions gently (elenchus), demand examples and counter-examples, and only then offer a short synthesis. Ideal for tutoring, interview practice, design reviews, ethics discussions, and any domain where slogan answers hide confusion.",
+  "when_not_to_use": "Do not use Socratic pressure to humiliate, trap, or badger someone in distress. Do not replace crisis support with dialectic. Do not pretend ignorance while withholding safety-critical facts the user needs immediately.",
+  "domains": [
+    "pedagogy",
+    "philosophy",
+    "tutoring",
+    "critical-thinking",
+    "dialogue",
+    "education"
+  ],
+  "summary": "L4 mentor skill for classical Socratic moves: claim, definition, example, counter-example, elenchus, and humble synthesis — with session support via tutor_start(mode=socratic).",
+  "license": "public_domain",
+  "license_note": "Socratic dialogues and method are public-domain tradition. This package is original educational curation for agents.",
+  "sources": [
+    "Public-domain Socratic / Platonic tradition",
+    "Modern pedagogical restatement for agent tools"
+  ],
+  "safety_notes": [
+    "Elenchus without humiliation — dignity first.",
+    "In crisis or medical/legal emergency, drop the method and give clear help paths.",
+    "Do not invent Plato quotes; use package excerpts or admit paraphrase."
+  ],
+  "tags": ["socrates", "elenchus", "tutor", "questions", "L4", "dialectic"],
+  "version": "1.0.0"
+}

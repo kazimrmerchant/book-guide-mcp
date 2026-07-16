@@ -1,0 +1,85 @@
+[
+  {
+    "id": "avicenna-study",
+    "name": "Avicenna study session",
+    "description": "One concept through definition → division → demonstration → application → objection.",
+    "source_chapter": "ch_008",
+    "level": "L4",
+    "estimated_minutes": 40,
+    "steps": [
+      {
+        "id": "name-subject",
+        "title": "Name the subject",
+        "instruction": "State the single concept or question you will study this session. Reject compound topics.",
+        "questions": ["What exactly are we defining?", "What will we deliberately ignore today?"],
+        "success_criteria": ["One clear subject name", "Out-of-scope list with at least one item"]
+      },
+      {
+        "id": "define",
+        "title": "Definition (hadd)",
+        "instruction": "Write genus + differentia for the subject. Reject slogans.",
+        "questions": ["What kind of thing is it?", "What sets it apart within that kind?"],
+        "success_criteria": ["One sentence definition", "A failed alternative differentia named"]
+      },
+      {
+        "id": "divide",
+        "title": "Division (qisma)",
+        "instruction": "Divide the subject into 2–5 parts/kinds relevant to your goal.",
+        "questions": ["Where do disputes usually confuse parts?", "Is any part missing that changes conclusions?"],
+        "success_criteria": ["Labeled parts", "One example per part"]
+      },
+      {
+        "id": "demonstrate",
+        "title": "Demonstration (burhan)",
+        "instruction": "Give the reason/cause chain — not a stack of authorities.",
+        "questions": ["What is the middle term?", "What would falsify this?"],
+        "success_criteria": ["Causal or logical chain in 3–6 steps", "One falsifier"]
+      },
+      {
+        "id": "apply",
+        "title": "Apply to a particular",
+        "instruction": "Pick a concrete case. Map clauses of definition/division onto the case.",
+        "questions": ["Which clause covers the case?", "Does the case force a revision?"],
+        "success_criteria": ["Named particular", "Mapping table or bullets"]
+      },
+      {
+        "id": "object",
+        "title": "Objection & reply",
+        "instruction": "Steelman the best objection; reply without humiliation.",
+        "questions": ["What would a fair opponent say?", "Do we narrow the claim?"],
+        "success_criteria": ["Steelman in the opponent's voice", "Reply or narrowed claim"]
+      }
+    ]
+  },
+  {
+    "id": "history-safety",
+    "name": "Historical medical idea (safe framing)",
+    "description": "Explain a classical health idea for literacy only — with modern disclaimer.",
+    "source_chapter": "ch_007",
+    "level": "L2",
+    "estimated_minutes": 20,
+    "steps": [
+      {
+        "id": "frame",
+        "title": "Safety frame",
+        "instruction": "State aloud: this is history of ideas, not medical advice; modern care is licensed and evidence-based.",
+        "questions": ["Who should the user call for real symptoms?"],
+        "success_criteria": ["Explicit non-advice disclaimer"]
+      },
+      {
+        "id": "historical",
+        "title": "Historical claim",
+        "instruction": "Summarize the classical idea in neutral past tense ('they held that…').",
+        "questions": ["What vocabulary did they use?", "What problem were they trying to name?"],
+        "success_criteria": ["Past-tense historical summary", "Citation to package excerpt"]
+      },
+      {
+        "id": "modern",
+        "title": "Modern contrast",
+        "instruction": "State that modern medicine may reject or replace the framework; do not prescribe.",
+        "questions": ["What would a modern clinician do instead at a high level?"],
+        "success_criteria": ["Contrast without treatment plan", "Redirect to professionals if needed"]
+      }
+    ]
+  }
+]
