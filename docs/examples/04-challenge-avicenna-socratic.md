@@ -1,6 +1,6 @@
-# Challenge findings — Avicenna + Socratic applied to Book Guide MCP
+# Ship under fire — Avicenna + Socratic challenge of Book Guide MCP
 
-We turned the demo skills on the product itself. Below: **definition**, **division**, **elenchus**, bugs found, and fixes shipped.
+We turned the **demo books on the product itself**. Below: **definition**, **division**, **elenchus**, bugs found, and **ship improvements** that landed in **v0.2.0**.
 
 ---
 

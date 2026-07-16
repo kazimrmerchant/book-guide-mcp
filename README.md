@@ -1,13 +1,17 @@
 # Book Guide MCP
 
-### Use your books as guides for AI agents
+## Ship improvements with this MCP — not more generic advice
+
+**Use your books as guides for AI agents.**  
+Turn the shelf you already trust into **agent-callable skills**: cite with locators, run playbooks, apply frameworks, teach with **Socratic** and **Avicenna** tutors — local-first, **no API keys**.
 
 [![CI](https://github.com/kazimrmerchant/book-guide-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/kazimrmerchant/book-guide-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-stdio-purple.svg)](https://modelcontextprotocol.io)
+[![Version](https://img.shields.io/badge/version-0.2.0-informational.svg)](CHANGELOG.md)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-green.svg)](https://www.python.org)
 
-**Works with any MCP host** (stdio):
+**Plug into any MCP host** (stdio):
 
 [![Cursor](https://img.shields.io/badge/Cursor-MCP-000000?logo=cursor&logoColor=white)](https://cursor.com)
 [![Claude Desktop](https://img.shields.io/badge/Claude_Desktop-MCP-d97706)](https://claude.ai/download)
@@ -32,9 +36,29 @@
 
 **Book Guide MCP** is an open-source [Model Context Protocol](https://modelcontextprotocol.io) server that turns books you own (or public-domain texts) into **agent-callable skill packages**—playbooks, frameworks, rubrics, and mentor tutors (including **Socratic** and **Avicenna** modes).
 
+**Product definition (genus + differentia):** a *local MCP skill package* is **executable method** (card → playbooks → frameworks → curriculum) **plus citable excerpts** — not a raw RAG dump, not a fine-tuned model, not medical advice.
+
 ---
 
-## The hook
+## Ship improvements in 0.2.0
+
+This is what “shipping with this MCP” means — improvements agents can **run**, not slogans:
+
+| Ship it | How this MCP helps |
+|---------|-------------------|
+| **Fewer invented “best practices”** | `skill_match` → book skill routing with intent boosts |
+| **Claims that survive review** | `skill_search` / `skill_cite` with locators |
+| **Process, not vibes** | L2 playbooks + L3 frameworks (context seeds `subject`/`claim`) |
+| **Teaching that holds a claim** | Socratic elenchus that **quotes the learner**; Avicenna definition→division→proof |
+| **Honest imports** | Genre detection — novels stay L0–L1; method books get L4 |
+| **Proof of transfer** | `skill_transfer_test` + playbook *transfer* step (fresh particular) |
+| **Pressure-tested design** | Demo books used to challenge the product itself ([write-up](docs/examples/04-challenge-avicenna-socratic.md)) |
+
+Full release notes: [CHANGELOG.md](CHANGELOG.md) · tests: **20 passed** on the challenge suite.
+
+---
+
+## Why teams adopt it (not “features”)
 
 | Without Book Guide | With Book Guide |
 |--------------------|-----------------|
@@ -50,7 +74,7 @@
 
 ---
 
-## Who this is for
+## Who ships with it
 
 - **Agent builders** who want domain expertise without fine-tuning  
 - **Researchers & students** who want Socratic / structured tutoring from real texts  
@@ -59,7 +83,7 @@
 
 ---
 
-## Compatible IDEs & hosts
+## Compatible IDEs & hosts — one stdio server, many surfaces
 
 Book Guide MCP speaks standard **MCP over stdio**. If your app can run an MCP server, it can use your books as guides.
 
@@ -105,7 +129,7 @@ Book Guide MCP speaks standard **MCP over stdio**. If your app can run an MCP se
 
 ---
 
-## How it helps AI agents
+## Capability ladder agents actually climb
 
 Agents already load **skills** (routing cards + procedures). Books are the densest source of human expertise. This MCP maps a book to five capability levels:
 
@@ -125,7 +149,8 @@ Agents already load **skills** (routing cards + procedures). Books are the dense
 3. skill_search / skill_cite → evidence before claims
 4. skill_playbook_* or skill_framework_apply → execute method
 5. tutor_start / tutor_turn → teach or coach (socratic | avicenna)
-6. skill_grade → score work against the book's rubric
+6. skill_transfer_test → fresh particular (imitation vs knowledge)
+7. skill_grade → score work against the book's rubric
 ```
 
 **Hard rules for agents using this server:**
@@ -151,7 +176,7 @@ tutor_start(book_id="avicenna-canon", mode="avicenna")
 
 ---
 
-## Examples — what to expect
+## See it ship — examples of what to expect
 
 Concrete walkthroughs with **tool calls**, **sample JSON**, and **agent lines** you should see:
 
@@ -171,19 +196,19 @@ Concrete walkthroughs with **tool calls**, **sample JSON**, and **agent lines** 
 
 Index: [docs/examples/README.md](docs/examples/README.md)
 
-## How to use (guides)
+## Guides that get you shipping
 
 | Guide | Who | Link |
 |-------|-----|------|
-| **Examples (what to expect)** | Everyone | [docs/examples/](docs/examples/) |
-| **Full usage guide** | Humans + agents | [docs/USAGE.md](docs/USAGE.md) |
+| **See it ship (examples)** | Everyone | [docs/examples/](docs/examples/) |
+| **Install & operate** | Humans + agents | [docs/USAGE.md](docs/USAGE.md) |
 | **Agent playbook** (short) | AI agents / system prompts | [docs/AGENT_PLAYBOOK.md](docs/AGENT_PLAYBOOK.md) |
 | **Infographics** | Visual overview | [docs/assets/](docs/assets/) |
 | **Maintainer notes** | Contributors editing this repo | [AGENTS.md](AGENTS.md) |
 
 Start with **examples** for “what will I see?”, or **USAGE.md** for install.
 
-## Quick start
+## Quick start — install, verify, connect
 
 ```bash
 git clone https://github.com/kazimrmerchant/book-guide-mcp.git
@@ -195,7 +220,10 @@ python -m venv .venv
 # macOS / Linux
 # source .venv/bin/activate
 
+pip install -U pip
 pip install -e ".[dev]"
+# or: pip install -r requirements-dev.txt && pip install -e .
+
 pytest -q
 book-skills-mcp
 # or: python -m book_skills_mcp
@@ -255,7 +283,7 @@ Skill packages are designed so communities can share **playbooks and frameworks*
 
 ---
 
-## Tools (19)
+## Tool surface agents call (20+)
 
 | Group | Tools |
 |-------|--------|
@@ -264,7 +292,7 @@ Skill packages are designed so communities can share **playbooks and frameworks*
 | Import | `skill_import_file`, `skill_import_url` |
 | Playbooks | `skill_playbook_list`, `skill_playbook_start`, `skill_playbook_next` |
 | Frameworks | `skill_framework_list`, `skill_framework_apply` |
-| Mentor | `tutor_start`, `tutor_turn`, `tutor_record_mastery`, `skill_grade` |
+| Mentor | `tutor_start`, `tutor_turn`, `tutor_record_mastery`, `skill_transfer_test`, `skill_grade` |
 
 **Tutor modes:** `socratic` · `avicenna` · `explain` · `quiz` · `coach`
 

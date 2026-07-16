@@ -1,6 +1,6 @@
-# Example 02 — Avicenna method lens
+# Ship cleaner decisions — Avicenna method lens on real work
 
-**Goal:** Analyze a real decision with ordered method (definition → division → demonstration → application).
+**Outcome:** Analyze a live decision with ordered method (**definition → division → demonstration → application**).
 
 **Demo skill:** `avicenna-canon`  
 **Safety:** Educational method only — **not medical advice**.

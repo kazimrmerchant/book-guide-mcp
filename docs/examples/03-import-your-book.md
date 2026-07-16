@@ -1,6 +1,6 @@
-# Example 03 — Import your own book as a skill
+# Ship your own shelf — import a book you own as a runnable skill
 
-**Goal:** Turn a file you own into an L4 skill package the agent can run.
+**Outcome:** Turn a file you own into a skill package the agent can **search, playbook, and tutor** (method books → L4; narrative stays honest L0–L1).
 
 **Formats:** `.md` `.txt` `.html` `.epub` `.pdf` (prefer EPUB/Markdown)
 

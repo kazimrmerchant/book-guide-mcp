@@ -1,13 +1,14 @@
-# Book Guide MCP — notes for coding agents (maintainers)
+# Ship this repo — notes for coding agents (maintainers)
 
 > **Using** the MCP as an end-user agent? Read **[docs/USAGE.md](docs/USAGE.md)** and **[docs/AGENT_PLAYBOOK.md](docs/AGENT_PLAYBOOK.md)** first.  
 > This file is for agents/humans **editing and shipping** this repository.
 
 ## What this repo is
 
-Open-source **MCP server**: turn books the user owns (or public-domain texts) into **L0–L4 skill packages** agents can route to, cite, run as playbooks, and use for Socratic/Avicenna tutoring.
+Open-source **MCP server** that helps teams **ship improvements** with books: turn texts the user owns (or public-domain sources) into **L0–L4 skill packages** agents can route to, cite, run as playbooks, and use for Socratic/Avicenna tutoring.
 
 **Product name:** Book Guide MCP  
+**Version:** 0.2.0  
 **Python package / module:** `book_skills_mcp`  
 **CLI:** `book-skills-mcp` · `python -m book_skills_mcp`
 

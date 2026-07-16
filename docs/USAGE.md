@@ -1,8 +1,8 @@
-# How to use Book Guide MCP
+# How to ship with Book Guide MCP
 
 **Audience:** humans setting up the server **and** AI agents calling its tools.
 
-**Product line:** *Use your books as guides for AI agents.*
+**Product line:** *Ship improvements with books your agents can run — use your books as guides.*
 
 ### Visual overview
 

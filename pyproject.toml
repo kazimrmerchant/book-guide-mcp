@@ -1,7 +1,7 @@
 [project]
 name = "book-skills-mcp"
-version = "0.1.0"
-description = "Book Guide MCP — use your books as guides for AI agents. Open-source MCP: playbooks, frameworks, citations, Socratic & Avicenna tutors."
+version = "0.2.0"
+description = "Book Guide MCP — ship improvements with books your agents can run. Playbooks, citations, Socratic & Avicenna tutors. Local-first open-source MCP."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
@@ -29,27 +29,34 @@ keywords = [
   "jetbrains",
 ]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "Intended Audience :: Education",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Education",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-  "mcp>=1.9.0",
-  "pydantic>=2.7",
-  "httpx>=0.27",
-  "ebooklib>=0.18",
-  "beautifulsoup4>=4.12",
-  "lxml>=5.0",
-  "pypdf>=5.0",
-  "python-slugify>=8.0",
+  "mcp>=1.28.0,<2",
+  "pydantic>=2.13.0,<3",
+  "httpx>=0.28.0,<1",
+  "ebooklib>=0.20,<1",
+  "beautifulsoup4>=4.12.0,<5",
+  "lxml>=5.0.0,<7",
+  "pypdf>=5.0.0,<7",
+  "python-slugify>=8.0.0,<9",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "pytest-asyncio>=0.24", "anyio>=4"]
+dev = [
+  "pytest>=8.0.0,<10",
+  "pytest-asyncio>=0.24.0,<2",
+  "anyio>=4.0.0,<5",
+]
 
 [project.scripts]
 book-skills-mcp = "book_skills_mcp.server:main"
@@ -61,7 +68,7 @@ Issues = "https://github.com/kazimrmerchant/book-guide-mcp/issues"
 Changelog = "https://github.com/kazimrmerchant/book-guide-mcp/blob/main/CHANGELOG.md"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.25.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
@@ -76,11 +83,14 @@ include = [
   "skills/**",
   "examples/**",
   "tests/**",
+  "docs/**",
   "README.md",
   "LICENSE",
   "CHANGELOG.md",
   "SECURITY.md",
   "CONTRIBUTING.md",
+  "requirements.txt",
+  "requirements-dev.txt",
 ]
 
 [tool.pytest.ini_options]

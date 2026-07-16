@@ -1,6 +1,6 @@
-# Example 01 — Socratic tutor
+# Ship better teaching — Socratic tutor that holds a claim
 
-**Goal:** Learn a concept by questions, not monologue.
+**Outcome:** Learn (or pressure-test) a concept by **one question at a time** — not a monologue.
 
 **Demo skill:** `socratic-method`
 
