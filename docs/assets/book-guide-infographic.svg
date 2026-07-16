@@ -139,7 +139,7 @@
   </g>
 
   <!-- Tagline -->
-  <text class="foot" x="450" y="1185" text-anchor="middle" font-size="20">Methods first  ∑  Full text second  ∑  Citations always</text>
+  <text class="foot" x="450" y="1185" text-anchor="middle" font-size="20">Methods first  ù  Full text second  ù  Citations always</text>
 
   <!-- Badges -->
   <g transform="translate(120, 1220)">
@@ -155,7 +155,7 @@
     <text x="100" y="28" text-anchor="middle" class="tag" font-size="15">No API keys required</text>
   </g>
 
-  <text class="muted" x="450" y="1300" text-anchor="middle" font-size="12">Works with Cursor ù Claude Desktop ù Claude Code ù VS Code ù Windsurf ù Zed ù Cline ù Continue ù JetBrains</text>
-  <text class="muted" x="450" y="1330" text-anchor="middle" font-size="14">github.com/kazimrmerchant/book-guide-mcp  ù  MIT</text>
+  <text class="muted" x="450" y="1300" text-anchor="middle" font-size="12">Works with Cursor | Claude Desktop | Claude Code | VS Code | Google Antigravity | Zed | Cline | Continue | JetBrains</text>
+  <text class="muted" x="450" y="1330" text-anchor="middle" font-size="14">github.com/kazimrmerchant/book-guide-mcp  |  MIT</text>
   <text class="muted" x="450" y="1360" text-anchor="middle" font-size="13">Your shelf. Your rules. Your agent&#39;s guide.</text>
 </svg>

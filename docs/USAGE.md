@@ -72,7 +72,7 @@ Book Guide MCP works with **any stdio MCP client**, including:
 | **Claude Desktop** | Claude config JSON → `mcpServers` |
 | **Claude Code** | Claude Code MCP server config |
 | **VS Code + GitHub Copilot** | Copilot / Agent MCP settings or workspace MCP JSON |
-| **Windsurf** | MCP / AI Flow settings |
+| **Google Antigravity** | `~/.gemini/antigravity/mcp_config.json` or Settings → Customizations → MCP |
 | **Zed** | Agent / context server settings |
 | **Cline** | Cline MCP panel |
 | **Continue** | Continue MCP config |
@@ -102,6 +102,7 @@ On macOS/Linux use the venv `python` path and forward slashes.
 - [`examples/cursor-mcp.json`](../examples/cursor-mcp.json) — Cursor / Claude Desktop style  
 - [`examples/claude-desktop-mcp.json`](../examples/claude-desktop-mcp.json) — Claude Desktop  
 - [`examples/vscode-mcp.json`](../examples/vscode-mcp.json) — VS Code-style  
+- [`examples/antigravity-mcp.json`](../examples/antigravity-mcp.json) — Google Antigravity  
 
 Full host table: [README § Compatible IDEs & hosts](../README.md#compatible-ides--hosts).
 

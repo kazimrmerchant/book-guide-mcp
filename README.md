@@ -13,7 +13,7 @@
 [![Claude Desktop](https://img.shields.io/badge/Claude_Desktop-MCP-d97706)](https://claude.ai/download)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-MCP-d97706)](https://docs.anthropic.com/en/docs/claude-code)
 [![VS Code](https://img.shields.io/badge/VS_Code-Copilot_MCP-007ACC?logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com)
-[![Windsurf](https://img.shields.io/badge/Windsurf-MCP-0ea5e9)](https://windsurf.com)
+[![Google Antigravity](https://img.shields.io/badge/Google_Antigravity-MCP-4285F4?logo=google&logoColor=white)](https://antigravity.google)
 [![Zed](https://img.shields.io/badge/Zed-MCP-0842a0)](https://zed.dev)
 [![Cline](https://img.shields.io/badge/Cline-MCP-22c55e)](https://cline.bot)
 [![Continue](https://img.shields.io/badge/Continue-MCP-6366f1)](https://continue.dev)
@@ -69,7 +69,7 @@ Book Guide MCP speaks standard **MCP over stdio**. If your app can run an MCP se
 | **[Claude Desktop](https://claude.ai/download)** | Full MCP client — add server in Claude config |
 | **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** | Terminal agent with MCP tools + roots |
 | **[VS Code](https://code.visualstudio.com)** + **GitHub Copilot** | Agent mode MCP / Copilot MCP integration |
-| **[Windsurf](https://windsurf.com)** | AI Flow + MCP tools (often marketplace / JSON) |
+| **[Google Antigravity](https://antigravity.google)** | Antigravity IDE / 2.0 / CLI — MCP via `mcp_config.json` |
 | **[Zed](https://zed.dev)** | Native MCP — tools & prompts as slash commands |
 | **[Cline](https://cline.bot)** | VS Code extension agent with MCP tools |
 | **[Continue](https://continue.dev)** | Open assistant in VS Code / JetBrains — MCP tools |
@@ -96,7 +96,7 @@ Book Guide MCP speaks standard **MCP over stdio**. If your app can run an MCP se
 | Cursor | `.cursor/mcp.json` or Cursor Settings → MCP |
 | Claude Desktop | Claude desktop config JSON (`mcpServers`) |
 | VS Code + Copilot | `.vscode/mcp.json` or Copilot MCP settings |
-| Windsurf | Windsurf MCP / settings UI |
+| Google Antigravity | `~/.gemini/antigravity/mcp_config.json` (Settings → Customizations → MCP) |
 | Zed | `settings.json` context servers / Agent settings |
 | Continue | Continue config (`mcpServers` / YAML) |
 | Cline | Cline MCP settings panel |
@@ -192,6 +192,8 @@ Templates:
 
 - [`examples/cursor-mcp.json`](examples/cursor-mcp.json) — Cursor / generic `mcpServers`
 - [`examples/vscode-mcp.json`](examples/vscode-mcp.json) — VS Code-style MCP entry
+- [`examples/antigravity-mcp.json`](examples/antigravity-mcp.json) — Google Antigravity (`mcp_config.json`)
+- [`examples/claude-desktop-mcp.json`](examples/claude-desktop-mcp.json) — Claude Desktop
 
 ---
 
